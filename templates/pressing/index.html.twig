@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pressing index{% endblock %}
+
+{% block body %}
+
+    <div class="card">
+        <h5 class="card-header">Liste des clients <a href="{{ path('app_pressing_new') }}" class="btn btn-info mx-3">Nouvel
+                Pressing</a></h5>
+        <div class="card-body">
+            <div class="table-responsive text-nowrap">
+                <table class="table table-bordered" id="myTable">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Adresse</th>
+                        <th>Telephone</th>
+                        <th>Email</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for pressing in pressings %}
+                        <tr>
+                            <td>{{ pressing.nom }}</td>
+                            <td>{{ pressing.adresse }}</td>
+                            <td>{{ pressing.telephone }}</td>
+                            <td>{{ pressing.email }}</td>
+                            <td>
+                                <a href="{{ path('app_pressing_show', {'id': pressing.id}) }}"
+                                   class="btn btn-primary btn-sm"><i class="bx bx-show"></i></a>
+                                <a href="{{ path('app_pressing_edit', {'id': pressing.id}) }}"
+                                   class="btn btn-info btn-sm"><i class="bx bx-edit"></i></a>
+                                {{ include('pressing/_delete_form.html.twig') }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="7">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

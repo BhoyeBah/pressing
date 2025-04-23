@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste des commandes{% endblock %}
+{% block gestion %}active{% endblock %}
+{% block facture_paye %}active{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h5 class="card-header">
+        Liste des Factures payée(s)
+    </h5>
+    <div class="card-body">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr>
+                        <th>#N° Commande</th>
+                        {#                        <th>Date Commande</th>#}
+                        <th>Date Livraison</th>
+                        {#                        <th>Nom et prénom</th>#}
+                        <th>Téléphone</th>
+                        {#                        <th>Rémises</th>#}
+                        {#                        <th>Prix total</th>#}
+                        <th>Montant total</th>
+                        <th>Montant Reçu</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for commande in commandes %}
+
+                    <tr>
+                        <td>{{ commande.numero }}</td>
+                        {#                            <td>{{ commande.dateCommande|date('h:i:s d-m-Y') }}</td>#}
+                        <td>{{ commande.dateLivraison|date('h:i:s d-m-Y') }}</td>
+                        {#                            <td>{{ commande.client.nom }} {{ commande.client.prenom }}</td>#}
+                        <td> {{ commande.client.telephone }}</td>
+                        {#                            <td class="text-end">{{ commande.remise|number_format(2, ',', ' ') }} FCFA</td>#}
+                        {#                            <td class="text-end">{{ (commande.montantTotal - commande.remise)|number_format(2, ',', ' ') }} FCFA</td>#}
+                        <td class="text-end">{{ commande.montantTotal|number_format(2, ',', ' ') }} FCFA</td>
+
+                        <td class="text-end">
+                            {% set totalRecu = 0 %}
+                            {% for paiement in commande.paiements %}
+                            {% set totalRecu = totalRecu + paiement.montantRecu %}
+                            {% endfor %}
+                            {{ totalRecu|number_format(2, ',', ' ') }} FCFA
+                        </td>
+
+                        <td>
+
+                            {% if commande.status == 'payé' %}
+                            <span class="badge bg-success">Payé</span>
+                            {% else %}
+                            <span class="badge bg-danger">Non payé</span>
+                            {% endif %}
+
+                        </td>
+                        <td>
+                            <a id="print" onclick="load('print')"
+                                href="{{ path("commande_print_Detail", { 'commande': commande.id }) }}"
+                                class="btn btn-primary btn-sm">
+                                <i class="bx bx-printer"></i>
+                            </a>
+                            {#                                {% if commande.status == 'non payé' %}#}
+                            <a href="{{ path('app_commande_show', {'id': commande.id}) }}"
+                                class="btn btn-success btn-sm"><i class="bx bx-book"></i>
+                            </a>
+
+                            {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center">Aucune commande trouvée</td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

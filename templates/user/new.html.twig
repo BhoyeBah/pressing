@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Modules{% endblock %}
+
+{% block body %}
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> d'ajout d'un utilisateur' <a href="{{ path('app_users_index') }}" class="btn btn-info"><i class="bx bx-list"></i>Liste des utilisateurs</a></h4>
+    {{ include('user/_form.html.twig') }}
+{% endblock %}

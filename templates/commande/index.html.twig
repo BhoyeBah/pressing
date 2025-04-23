@@ -1,0 +1,156 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste des commandes{% endblock %}
+{% block gestion %}active{% endblock %}
+{% block all_facture %}active{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <h5 class="card-header">
+            Liste des Factures
+            <a href="{{ path('app_commande_new') }}" class="btn btn-info mx-3">Nouvelle facture</a>
+        </h5>
+        <div class="card-body">
+            <div class="table-responsive text-nowrap">
+                <table class="table table-bordered" id="myTable">
+                    <thead>
+                    <tr>
+                        <th>#N° Commande</th>
+                        {#                        <th>Date Commande</th>#}
+                        <th>Date Livraison</th>
+                        {#                        <th>Nom et prénom</th>#}
+                        <th>Téléphone</th>
+                        {#                        <th>Rémises</th>#}
+                        {#                        <th>Prix total</th>#}
+                        <th>Montant total</th>
+                        <th>Montant Reçu</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for commande in commandes %}
+
+                        <tr>
+                        <td>{{ commande.numero }}</td>
+                        {#                            <td>{{ commande.dateCommande|date('h:i:s d-m-Y') }}</td>#}
+                        <td>{{ commande.dateLivraison|date('h:i:s d-m-Y') }}</td>
+                        {#                            <td>{{ commande.client.nom }} {{ commande.client.prenom }}</td>#}
+                        <td> {{ commande.client.telephone }}</td>
+                        {#                            <td class="text-end">{{ commande.remise|number_format(2, ',', ' ') }} FCFA</td>#}
+                        {#                            <td class="text-end">{{ (commande.montantTotal - commande.remise)|number_format(2, ',', ' ') }} FCFA</td>#}
+                        <td class="text-end">{{ commande.montantTotal|number_format(2, ',', ' ') }} FCFA</td>
+
+                            <td class="text-end">
+                                {% set totalRecu = 0 %}
+                            {% for paiement in commande.paiements %}
+                                {% set totalRecu = totalRecu + paiement.montantRecu %}
+                            {% endfor %}
+                                {{ totalRecu|number_format(2, ',', ' ') }} FCFA
+                            </td>
+
+                        <td>
+
+                            {% if commande.status == 'payé' %}
+                                <span class="badge bg-success">Payé</span>
+                            {% else %}
+                                <span class="badge bg-danger">Non payé</span>
+                            {% endif %}
+
+                        </td>
+                        <td>
+                        <a id="print" onclick="load('print')"
+                           href="{{ path("commande_print_Detail", { 'commande': commande.id }) }}"
+                           class="btn btn-primary btn-sm">
+                            <i class="bx bx-printer"></i>
+                        </a>
+                        {#                                {% if commande.status == 'non payé' %}#}
+                        <a href="{{ path('app_commande_show', {'id': commande.id}) }}"
+                           class="btn btn-success btn-sm"><i class="bx bx-book"></i>
+                        </a>
+
+                        <!-- Large Modal -->
+                        {% if commande.status == 'non payé' %}
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal"
+                                    data-commande-id="{{ commande.id }}" data-numero-commande="{{ commande.numero }}"
+                                    data-montant-restant="{{ (commande.montantTotal - commande.remise - totalRecu)|number_format(2, ',',' ') }}">
+                                Payé
+                            </button>
+                        {% endif %}
+
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">Aucune commande trouvée</td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="row gy-3">
+            <!-- Modal Sizes -->
+            <div class="col-lg-4 col-md-6">
+                <small class="text-light fw-semibold"></small>
+                <!-- Small Modal -->
+                <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel2">Paiement</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <form action="{{ path('app_commande_payer') }}" id="paymentForm" method="post">
+                                <input type="hidden" id="commandeId" name="commandeId" value="">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="mb-3">
+                                            <label for="amount" class="form-label">Montant à payer</label>
+                                            <input type="text" id="amount" name="amount" class="form-control" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col mb-0">
+                                            <label class="form-label" for="emailSmall">Montant reçu</label>
+                                            <input type="number" name="paymentAmount" class="form-control" id="paymentAmount" placeholder="12354" step="0.01" min="0" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Payer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var paymentModal = document.getElementById('paymentModal');
+    paymentModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var commandeId = button.getAttribute('data-commande-id');
+        var commandeNumero = button.getAttribute('data-numero-commande');
+        var montantRestant = button.getAttribute('data-montant-restant');
+        var modalTitle = paymentModal.querySelector('.modal-title');
+        var commandeIdInput = paymentModal.querySelector('#commandeId');
+        var amountInput = paymentModal.querySelector('#amount');
+
+
+
+        // modification du contenu de la modal
+        modalTitle.textContent = "Paiement de la commande " + commandeNumero;
+        commandeIdInput.value = commandeId;
+        amountInput.value = montantRestant;
+    });
+
+</script>
+{% endblock %}

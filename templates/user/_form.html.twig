@@ -1,0 +1,91 @@
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Basic with Icons</h5>
+                    <small class="text-muted float-end">Merged input group</small>
+                </div>
+                <div class="card-body">
+                    {{ form_start(formUser) }}
+                    
+                    <!-- Nom -->
+                    <div class="mb-3">
+                        {{ form_label(formUser.nom, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-text"><i class="bx bx-user"></i></span>
+                            {{ form_widget(formUser.nom, {'attr': {'class': 'form-control', 'placeholder': 'Votre nom'}}) }}
+                            {{ form_errors(formUser.nom) }}
+                        </div>
+                    </div>
+
+                    <!-- Prénom -->
+                    <div class="mb-3">
+                        {{ form_label(formUser.prenom, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-text"><i class="bx bx-user"></i></span>
+                            {{ form_widget(formUser.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Votre prenom'}}) }}
+                            {{ form_errors(formUser.prenom) }}
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        {{ form_label(formUser.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                            {{ form_widget(formUser.email, {'attr': {'class': 'form-control', 'placeholder': 'Votre email'}}) }}
+                            {{ form_errors(formUser.email) }}
+                        </div>
+                    </div>
+
+                    <!-- Téléphone -->
+                    <div class="mb-3">
+                        {{ form_label(formUser.telephone, 'Téléphone', {'label_attr': {'class': 'form-label'}}) }}
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-text"><i class="bx bx-phone"></i></span>
+                            {{ form_widget(formUser.telephone, {'attr': {'class': 'form-control', 'placeholder': 'Votre telephone'}}) }}
+                            {{ form_errors(formUser.telephone) }}
+                        </div>
+                    </div>
+
+                    <!-- Adresse -->
+                    <div class="mb-3">
+                        {{ form_label(formUser.adresse, 'Adresse', {'label_attr': {'class': 'form-label'}}) }}
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-text"><i class="bx bx-map"></i></span>
+                            {{ form_widget(formUser.adresse, {'attr': {'class': 'form-control', 'placeholder': 'Votre adresse'}}) }}
+                            {{ form_errors(formUser.adresse) }}
+                        </div>
+                    </div>
+
+                    <!-- Mot de passe -->
+                    <div class="mb-3">
+                        {{ form_label(formUser.plainPassword, 'Mot de passe', {'label_attr': {'class': 'form-label'}}) }}
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-text"><i class="bx bx-lock"></i></span>
+                            {{ form_widget(formUser.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Votre mot de passe'}}) }}
+                            {{ form_errors(formUser.plainPassword) }}
+                        </div>
+                    </div>
+
+                    <!-- Sélection des rôles -->
+                    <div class="mb-3">
+                        <small class="text-light fw-semibold">Role</small>
+                        {% for role in formUser.roles %}
+                            <div class="form-check mt-3">
+                                {{ form_widget(role, {'attr': {'class': 'form-check-input'}}) }}
+                                {{ form_label(role, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Bouton Envoyer -->
+                    <button type="submit" class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
+
+                    {{ form_end(formUser) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

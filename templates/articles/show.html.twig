@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <center>
+        <div class="col-lg-6">
+            <small class="text-light fw-semibold">Informations</small>
+            <div class="demo-inline-spacing mt-3">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Image: </strong> <img src="" alt="">
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Nom: </strong> {{ article.designation }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Prix: </strong> {{ article.prix }} FCFA
+                    </li>
+
+{#                    <li class="list-group-item d-flex align-items-center">#}
+
+{#                        <strong class="mx-3"> <i class="bx bx-calendar me-2"></i> Date de création: </strong>#}
+{#                        {{ article.createdAt ? client.createdAt|date('Y-m-d H:i:s') : '' }}#}
+{#                    </li>#}
+{#                    <li class="list-group-item d-flex align-items-center"><strong class="mx-3"><i#}
+{#                                    class="bx bx-calendar-edit me-2"></i> Date de modification:</strong>#}
+{#                        {{ article.updatedAt ? client.updatedAt|date('Y-m-d H:i:s') : '' }}#}
+{#                    </li>#}
+
+                </ul>
+            </div>
+        </div>
+
+    </center>
+{% endblock %}

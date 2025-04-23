@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Membre{% endblock %}
+
+{% block body %}
+    <center>
+        <div class="col-lg-6">
+            <small class="text-light fw-semibold">Informations</small>
+            <div class="demo-inline-spacing mt-3">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Image: </strong> <img src="" alt="">
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Nom: </strong> {{ membre.nom }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Prénom: </strong> {{ membre.prenom }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-location-plus me-2"></i> Adresse:
+                        </strong> {{ membre.adresse }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-phone-call me-2"></i> Téléphone:
+                        </strong> {{ membre.telephone }}
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </center>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Articles{% endblock %}
+
+{% block body %}
+
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> de modification d'un article <a href="{{ path('app_articles_index') }}" class="btn btn-info"><i class="bx bx-list"></i>Liste des utilisateurs</a></h4>
+
+
+    {{ include('articles/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DemandePressing{% endblock %}
+
+{% block body %}
+    <h1>DemandePressing</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demande_pressing.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ demande_pressing.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ demande_pressing.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ demande_pressing.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_demande_pressing_index') }}">back to list</a>
+
+    <a href="{{ path('app_demande_pressing_edit', {'id': demande_pressing.id}) }}">edit</a>
+
+    {{ include('demande_pressing/_delete_form.html.twig') }}
+{% endblock %}
