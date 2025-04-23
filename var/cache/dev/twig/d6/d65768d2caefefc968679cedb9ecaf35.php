@@ -202,10 +202,13 @@ class __TwigTemplate_75f81cd38744ceb7dbdbbd06eefe3e82 extends Template
     <div class=\"invoice\">
         <!-- En-tête avec logo et coordonnées -->
         <div class=\"header\">
-            <img class=\"logo\" src=\"images/logo.png\">
+            <img class=\"logo\" src=\"";
+        // line 159
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logor.jpg"), "html", null, true);
+        yield "\">
             <div class=\"company-info\">
-                <div class=\"company-name\">NOUROU PRESSING 2</div>
-                <div>Maristes - 77 721 52 33</div>
+                <div class=\"company-name\">ROYAL PRESSING</div>
+                <div>Tivaoune peulh / rond-point AAD <br>771217506 / 778344200</div>
                 <div>contact@nouroupressing.com</div>
             </div>
         </div>
@@ -407,7 +410,7 @@ class __TwigTemplate_75f81cd38744ceb7dbdbbd06eefe3e82 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  366 => 246,  362 => 244,  358 => 242,  356 => 241,  350 => 238,  343 => 234,  340 => 233,  334 => 232,  331 => 231,  326 => 230,  324 => 229,  318 => 226,  310 => 221,  300 => 213,  290 => 208,  282 => 205,  278 => 204,  274 => 203,  271 => 202,  266 => 201,  246 => 184,  239 => 180,  235 => 179,  229 => 178,  219 => 171,  199 => 154,  44 => 1,);
+        return array (  369 => 246,  365 => 244,  361 => 242,  359 => 241,  353 => 238,  346 => 234,  343 => 233,  337 => 232,  334 => 231,  329 => 230,  327 => 229,  321 => 226,  313 => 221,  303 => 213,  293 => 208,  285 => 205,  281 => 204,  277 => 203,  274 => 202,  269 => 201,  249 => 184,  242 => 180,  238 => 179,  232 => 178,  222 => 171,  207 => 159,  199 => 154,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -570,10 +573,10 @@ class __TwigTemplate_75f81cd38744ceb7dbdbbd06eefe3e82 extends Template
     <div class=\"invoice\">
         <!-- En-tête avec logo et coordonnées -->
         <div class=\"header\">
-            <img class=\"logo\" src=\"images/logo.png\">
+            <img class=\"logo\" src=\"{{ asset('assets/img/logor.jpg') }}\">
             <div class=\"company-info\">
-                <div class=\"company-name\">NOUROU PRESSING 2</div>
-                <div>Maristes - 77 721 52 33</div>
+                <div class=\"company-name\">ROYAL PRESSING</div>
+                <div>Tivaoune peulh / rond-point AAD <br>771217506 / 778344200</div>
                 <div>contact@nouroupressing.com</div>
             </div>
         </div>
@@ -670,6 +673,6 @@ class __TwigTemplate_75f81cd38744ceb7dbdbbd06eefe3e82 extends Template
 
 </body>
 
-</html>", "commande/facture_print.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\commande\\facture_print.html.twig");
+</html>", "commande/facture_print.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\commande\\facture_print.html.twig");
     }
 }
