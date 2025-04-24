@@ -27,6 +27,8 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'config' => [$this, 'block_config'],
+            'employes' => [$this, 'block_employes'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -76,7 +78,47 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
         return; yield '';
     }
 
+    // line 4
+    public function block_config($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        yield "active";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
     // line 5
+    public function block_employes($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "employes"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "employes"));
+
+        yield "active";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,10 +128,10 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "    <div class=\"card\">
         <h5 class=\"card-header\">Liste des clients <a href=\"";
-        // line 7
+        // line 8
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_new");
         yield "\" class=\"btn btn-info mx-3\">Nouvel
                 Employé</a></h5>
@@ -104,15 +146,15 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
                         <th>Telephone</th>
                         <th>Email</th>
                         ";
-        // line 20
+        // line 21
         yield "                        <th>actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     ";
-        // line 24
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["employes"]) || array_key_exists("employes", $context) ? $context["employes"] : (function () { throw new RuntimeError('Variable "employes" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["employes"]) || array_key_exists("employes", $context) ? $context["employes"] : (function () { throw new RuntimeError('Variable "employes" does not exist.', 25, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -128,43 +170,43 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["employe"]) {
-            // line 25
+            // line 26
             yield "                        <tr>
                             <td>";
-            // line 26
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "numero", [], "any", false, false, false, 26), "html", null, true);
-            yield "</td>
-                            <td>";
             // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "nom", [], "any", false, false, false, 27), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "numero", [], "any", false, false, false, 27), "html", null, true);
             yield "</td>
                             <td>";
             // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "prenom", [], "any", false, false, false, 28), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "nom", [], "any", false, false, false, 28), "html", null, true);
             yield "</td>
                             <td>";
             // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "telephone", [], "any", false, false, false, 29), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "prenom", [], "any", false, false, false, 29), "html", null, true);
             yield "</td>
                             <td>";
             // line 30
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "email", [], "any", false, false, false, 30), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "telephone", [], "any", false, false, false, 30), "html", null, true);
+            yield "</td>
+                            <td>";
+            // line 31
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "email", [], "any", false, false, false, 31), "html", null, true);
             yield "</td>
                             ";
-            // line 32
+            // line 33
             yield "                            <td>
                                 <a href=\"";
-            // line 33
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 33)]), "html", null, true);
+            // line 34
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             yield "\"
                                    class=\"btn btn-primary btn-sm\"><i class=\"bx bx-show\"></i></a>
                                 <a href=\"";
-            // line 35
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 36)]), "html", null, true);
             yield "\"
                                    class=\"btn btn-info btn-sm\"><i class=\"bx bx-edit\"></i></a>
                                 ";
-            // line 37
+            // line 38
             yield Twig\Extension\CoreExtension::include($this->env, $context, "employe/_delete_form.html.twig");
             yield "
                             </td>
@@ -181,7 +223,7 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 41
+            // line 42
             yield "                        <tr>
                             <td colspan=\"7\">no records found</td>
                         </tr>
@@ -190,7 +232,7 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['employe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 46
         yield "                    </tbody>
                 </table>
             </div>
@@ -227,7 +269,7 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  194 => 45,  185 => 41,  168 => 37,  163 => 35,  158 => 33,  155 => 32,  151 => 30,  147 => 29,  143 => 28,  139 => 27,  135 => 26,  132 => 25,  114 => 24,  108 => 20,  93 => 7,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  236 => 46,  227 => 42,  210 => 38,  205 => 36,  200 => 34,  197 => 33,  193 => 31,  189 => 30,  185 => 29,  181 => 28,  177 => 27,  174 => 26,  156 => 25,  150 => 21,  135 => 8,  132 => 7,  122 => 6,  102 => 5,  82 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -235,7 +277,8 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Employe index{% endblock %}
-
+{% block config %}active{% endblock %}
+{% block employes %}active{% endblock %}
 {% block body %}
     <div class=\"card\">
         <h5 class=\"card-header\">Liste des clients <a href=\"{{ path('app_employe_new') }}\" class=\"btn btn-info mx-3\">Nouvel
@@ -282,6 +325,6 @@ class __TwigTemplate_84ff9b2160682cbad85eb3e97dd96a01 extends Template
         </div>
     </div>
 {% endblock %}
-", "employe/index.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\employe\\index.html.twig");
+", "employe/index.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\employe\\index.html.twig");
     }
 }

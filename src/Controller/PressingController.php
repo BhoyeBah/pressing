@@ -37,7 +37,7 @@ class PressingController extends AbstractController
 
             $nextNumber = $pressingRepository->getNextPressingNumber(['id' => $pressing->getId()]);
             $pressing->setNumero(str_pad($nextNumber, 4, '0', STR_PAD_LEFT));
-            dd($pressing);
+            // dd($pressing);
             $entityManager->persist($pressing);
             $entityManager->flush();
 

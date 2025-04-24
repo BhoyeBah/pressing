@@ -34,6 +34,10 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
             'facture_impaye' => [$this, 'block_facture_impaye'],
             'facture_paye' => [$this, 'block_facture_paye'],
             'all_facture' => [$this, 'block_all_facture'],
+            'config' => [$this, 'block_config'],
+            'client' => [$this, 'block_client'],
+            'articles' => [$this, 'block_articles'],
+            'employes' => [$this, 'block_employes'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -62,7 +66,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
     <meta name=\"viewport\"
         content=\"width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0\" />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard | POS PRESSING</title>
 
     <meta name=\"description\" content=\"\" />
 
@@ -190,7 +194,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                 </g>
                             </svg>
                         </span>
-                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">Sneat</span>
+                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">press</span>
                     </a>
 
                     <a href=\"javascript:void(0);\" class=\"layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none\">
@@ -273,14 +277,20 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                         </ul>
                     </li>
-                    <li class=\"menu-item\">
+                    <li class=\"menu-item ";
+            // line 167
+            yield from $this->unwrap()->yieldBlock('config', $context, $blocks);
+            yield "\">
                         <a href=\"javascript:void(0);\" class=\"menu-link menu-toggle\">
-                            <i class=\"menu-icon tf-icons bx bx-layout\"></i>
+                            <i class=\"menu-icon tf-icons bx bx-cog\"></i>
                             <div data-i18n=\"Layouts\">Configuration</div>
                         </a>
 
                         <ul class=\"menu-sub\">
-                            <li class=\"menu-item\">
+                            <li class=\"menu-item ";
+            // line 174
+            yield from $this->unwrap()->yieldBlock('client', $context, $blocks);
+            yield "\">
                                 <a href=\"";
             // line 175
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_index");
@@ -288,7 +298,10 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                     <div data-i18n=\"Without menu\">Clients</div>
                                 </a>
                             </li>
-                            <li class=\"menu-item\">
+                            <li class=\"menu-item ";
+            // line 179
+            yield from $this->unwrap()->yieldBlock('articles', $context, $blocks);
+            yield "\">
                                 <a href=\"";
             // line 180
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_articles_index");
@@ -296,16 +309,27 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                     <div data-i18n=\"Without menu\">Articles</div>
                                 </a>
                             </li>
+                            <li class=\"menu-item ";
+            // line 184
+            yield from $this->unwrap()->yieldBlock('employes', $context, $blocks);
+            yield "\">
+                                <a href=\"";
+            // line 185
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_index");
+            yield "\" class=\"menu-link\">
+                                    <div data-i18n=\"Without menu\">Employés</div>
+                                </a>
+                            </li>
                             ";
         }
-        // line 185
+        // line 190
         yield "                        </ul>
                     </li>
 
                     ";
-        // line 188
+        // line 193
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 189
+            // line 194
             yield "                    <li class=\"menu-item\">
                         <a href=\"javascript:void(0);\" class=\"menu-link menu-toggle\">
                             <i class=\"menu-icon tf-icons bx bx-layout\"></i>
@@ -316,7 +340,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
                             <li class=\"menu-item\">
                                 <a href=\"";
-            // line 198
+            // line 203
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_users_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Container\">Utilisateurs</div>
@@ -324,7 +348,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                             <li class=\"menu-item\">
                                 <a href=\"";
-            // line 203
+            // line 208
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pressing_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Pressing</div>
@@ -332,18 +356,10 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                             <li class=\"menu-item\">
                                 <a href=\"";
-            // line 208
+            // line 213
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_membre_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Membres</div>
-                                </a>
-                            </li>
-                            <li class=\"menu-item\">
-                                <a href=\"";
-            // line 213
-            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_index");
-            yield "\" class=\"menu-link\">
-                                    <div data-i18n=\"Without menu\">Employés</div>
                                 </a>
                             </li>
                             ";
@@ -389,25 +405,17 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
                         <ul class=\"navbar-nav flex-row align-items-center ms-auto\">
                             <!-- Place this tag where you want the button to render. -->
-                            <li class=\"nav-item lh-1 me-3\">
-                                <a
-                                    class=\"github-button\"
-                                    href=\"https://github.com/themeselection/sneat-html-admin-template-free\"
-                                    data-icon=\"octicon-star\"
-                                    data-size=\"large\"
-                                    data-show-count=\"true\"
-                                    aria-label=\"Star themeselection/sneat-html-admin-template-free on GitHub\">Star</a>
-                            </li>
+
                             ";
-        // line 264
-        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 264, $this->source); })()), "user", [], "any", false, false, false, 264)) {
-            // line 265
+        // line 256
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 256, $this->source); })()), "user", [], "any", false, false, false, 256)) {
+            // line 257
             yield "                            <!-- User -->
                             <li class=\"nav-item navbar-dropdown dropdown-user dropdown\">
                                 <a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\"
                                     data-bs-toggle=\"dropdown\">
                                     <div class=\"avatar avatar-online\">
-                                        <img src=\"assets/img/avatars/1.png\" alt class=\"w-px-40 h-auto rounded-circle\" />
+                                        <img src=\"\" alt class=\"w-px-40 h-auto rounded-circle\" />
                                     </div>
                                 </a>
                                 <ul class=\"dropdown-menu dropdown-menu-end\">
@@ -416,22 +424,45 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                             <div class=\"d-flex\">
                                                 <div class=\"flex-shrink-0 me-3\">
                                                     <div class=\"avatar avatar-online\">
-                                                        <img src=\"assets/img/avatars/1.png\" alt
+                                                        <img src=\"\" alt
                                                             class=\"w-px-40 h-auto rounded-circle\" />
                                                     </div>
                                                 </div>
                                                 <div class=\"flex-grow-1\">
                                                     <span class=\"fw-semibold d-block\">";
-            // line 284
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 284, $this->source); })()), "user", [], "any", false, false, false, 284), "nom", [], "any", false, false, false, 284), "html", null, true);
+            // line 276
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 276, $this->source); })()), "user", [], "any", false, false, false, 276), "nom", [], "any", false, false, false, 276), "html", null, true);
             yield " ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 284, $this->source); })()), "user", [], "any", false, false, false, 284), "prenom", [], "any", false, false, false, 284), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 276, $this->source); })()), "user", [], "any", false, false, false, 276), "prenom", [], "any", false, false, false, 276), "html", null, true);
             yield "</span>
-                                                    <small class=\"text-muted\">";
+                                                    <small class=\"text-muted\">
+                                                        ";
+            // line 278
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 278, $this->source); })()), "user", [], "any", false, false, false, 278), "roles", [], "any", false, false, false, 278));
+            foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
+                // line 279
+                yield "                                                        ";
+                if (($context["role"] == "ROLE_ADMIN")) {
+                    // line 280
+                    yield "                                                        Administrateur
+                                                        ";
+                } elseif ((                // line 281
+$context["role"] == "ROLE_USER")) {
+                    // line 282
+                    yield "                                                        Utilisateur
+                                                        ";
+                }
+                // line 284
+                yield "                                                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
             // line 285
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::join(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 285, $this->source); })()), "user", [], "any", false, false, false, 285), "roles", [], "any", false, false, false, 285), ", "), "html", null, true);
-            yield "</small>
+            yield "                                                    </small>
                                                 </div>
+
                                             </div>
                                         </a>
                                     </li>
@@ -455,7 +486,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                     </li>
                                     <li>
                                         <a class=\"dropdown-item\" href=\"";
-            // line 309
+            // line 310
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             yield "\">
                                             <i class=\"bx bx-power-off me-2\"></i>
@@ -468,7 +499,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                         </ul>
                         ";
         }
-        // line 319
+        // line 320
         yield "                    </div>
                 </nav>
 
@@ -481,9 +512,9 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
                     <div class=\"container-xxl flex-grow-1 container-p-y\">
                         ";
-        // line 330
+        // line 331
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 333
+        // line 334
         yield "                    </div>
 
                     <!-- Footer -->
@@ -495,24 +526,9 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                     document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                <a href=\"https://themeselection.com\" target=\"_blank\" class=\"footer-link fw-bolder\">ThemeSelection</a>
+                                <a href=\"https://dymotechnologie.com\" target=\"_blank\" class=\"footer-link fw-bolder\">DymoTechnologie</a>
                             </div>
-                            <div>
-                                <a href=\"https://themeselection.com/license/\" class=\"footer-link me-4\" target=\"_blank\">License</a>
-                                <a href=\"https://themeselection.com/\" target=\"_blank\" class=\"footer-link me-4\">More
-                                    Themes</a>
 
-                                <a
-                                    href=\"https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/\"
-                                    target=\"_blank\"
-                                    class=\"footer-link me-4\">Documentation</a>
-
-                                <a
-                                    href=\"https://github.com/themeselection/sneat-html-admin-template-free/issues\"
-                                    target=\"_blank\"
-                                    class=\"footer-link me-4\">Support</a>
-                            </div>
-                        </div>
                     </footer>
                     <!-- / Footer -->
 
@@ -533,43 +549,43 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src=\"";
-        // line 381
+        // line 367
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/jquery/jquery.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 382
+        // line 368
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/popper/popper.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 383
+        // line 369
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/js/bootstrap.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 384
+        // line 370
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 386
+        // line 372
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/js/menu.js"), "html", null, true);
         yield "\"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
     <script src=\"";
-        // line 390
+        // line 376
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/apex-charts/apexcharts.js"), "html", null, true);
         yield "\"></script>
 
     <!-- Main JS -->
     <script src=\"";
-        // line 393
+        // line 379
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
         yield "\"></script>
 
     <!-- Page JS -->
     <script src=\"";
-        // line 396
+        // line 382
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/dashboards-analytics.js"), "html", null, true);
         yield "\"></script>
 
@@ -580,7 +596,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
     <script src=\"//cdn.datatables.net/2.1.0/js/dataTables.min.js\"></script>
     <script src=\"";
-        // line 404
+        // line 390
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/javascript.js"), "html", null, true);
         yield "\"></script>
 
@@ -710,7 +726,83 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
         return; yield '';
     }
 
-    // line 330
+    // line 167
+    public function block_config($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 174
+    public function block_client($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "client"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "client"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 179
+    public function block_articles($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "articles"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "articles"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 184
+    public function block_employes($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "employes"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "employes"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 331
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -720,7 +812,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 331
+        // line 332
         yield "
                         ";
         
@@ -753,7 +845,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
      */
     public function getDebugInfo()
     {
-        return array (  724 => 331,  714 => 330,  695 => 160,  676 => 155,  657 => 150,  638 => 145,  619 => 137,  600 => 128,  584 => 404,  573 => 396,  567 => 393,  561 => 390,  554 => 386,  549 => 384,  545 => 383,  541 => 382,  537 => 381,  487 => 333,  485 => 330,  472 => 319,  459 => 309,  432 => 285,  426 => 284,  405 => 265,  403 => 264,  376 => 240,  352 => 218,  344 => 213,  336 => 208,  328 => 203,  320 => 198,  309 => 189,  307 => 188,  302 => 185,  294 => 180,  286 => 175,  269 => 161,  265 => 160,  258 => 156,  254 => 155,  247 => 151,  243 => 150,  236 => 146,  231 => 145,  229 => 144,  219 => 137,  207 => 128,  128 => 52,  121 => 48,  113 => 43,  108 => 41,  102 => 38,  97 => 36,  93 => 35,  87 => 32,  72 => 20,  51 => 1,);
+        return array (  816 => 332,  806 => 331,  787 => 184,  768 => 179,  749 => 174,  730 => 167,  711 => 160,  692 => 155,  673 => 150,  654 => 145,  635 => 137,  616 => 128,  600 => 390,  589 => 382,  583 => 379,  577 => 376,  570 => 372,  565 => 370,  561 => 369,  557 => 368,  553 => 367,  518 => 334,  516 => 331,  503 => 320,  490 => 310,  463 => 285,  457 => 284,  453 => 282,  451 => 281,  448 => 280,  445 => 279,  441 => 278,  434 => 276,  413 => 257,  411 => 256,  392 => 240,  368 => 218,  360 => 213,  352 => 208,  344 => 203,  333 => 194,  331 => 193,  326 => 190,  318 => 185,  314 => 184,  307 => 180,  303 => 179,  296 => 175,  292 => 174,  282 => 167,  273 => 161,  269 => 160,  262 => 156,  258 => 155,  251 => 151,  247 => 150,  240 => 146,  235 => 145,  233 => 144,  223 => 137,  211 => 128,  132 => 52,  125 => 48,  117 => 43,  112 => 41,  106 => 38,  101 => 36,  97 => 35,  91 => 32,  76 => 20,  55 => 1,);
     }
 
     public function getSourceContext()
@@ -772,7 +864,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
     <meta name=\"viewport\"
         content=\"width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0\" />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard | POS PRESSING</title>
 
     <meta name=\"description\" content=\"\" />
 
@@ -873,7 +965,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                 </g>
                             </svg>
                         </span>
-                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">Sneat</span>
+                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">press</span>
                     </a>
 
                     <a href=\"javascript:void(0);\" class=\"layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none\">
@@ -924,21 +1016,26 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                         </ul>
                     </li>
-                    <li class=\"menu-item\">
+                    <li class=\"menu-item {% block config %}{% endblock %}\">
                         <a href=\"javascript:void(0);\" class=\"menu-link menu-toggle\">
-                            <i class=\"menu-icon tf-icons bx bx-layout\"></i>
+                            <i class=\"menu-icon tf-icons bx bx-cog\"></i>
                             <div data-i18n=\"Layouts\">Configuration</div>
                         </a>
 
                         <ul class=\"menu-sub\">
-                            <li class=\"menu-item\">
+                            <li class=\"menu-item {% block client %}{% endblock %}\">
                                 <a href=\"{{ path('app_client_index') }}\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Clients</div>
                                 </a>
                             </li>
-                            <li class=\"menu-item\">
+                            <li class=\"menu-item {% block articles %}{% endblock %}\">
                                 <a href=\"{{ path('app_articles_index') }}\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Articles</div>
+                                </a>
+                            </li>
+                            <li class=\"menu-item {% block employes %}{% endblock %}\">
+                                <a href=\"{{ path('app_employe_index') }}\" class=\"menu-link\">
+                                    <div data-i18n=\"Without menu\">Employés</div>
                                 </a>
                             </li>
                             {% endif %}
@@ -967,11 +1064,6 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             <li class=\"menu-item\">
                                 <a href=\"{{ path('app_membre_index') }}\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Membres</div>
-                                </a>
-                            </li>
-                            <li class=\"menu-item\">
-                                <a href=\"{{ path('app_employe_index') }}\" class=\"menu-link\">
-                                    <div data-i18n=\"Without menu\">Employés</div>
                                 </a>
                             </li>
                             {% endif %}
@@ -1012,22 +1104,14 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
                         <ul class=\"navbar-nav flex-row align-items-center ms-auto\">
                             <!-- Place this tag where you want the button to render. -->
-                            <li class=\"nav-item lh-1 me-3\">
-                                <a
-                                    class=\"github-button\"
-                                    href=\"https://github.com/themeselection/sneat-html-admin-template-free\"
-                                    data-icon=\"octicon-star\"
-                                    data-size=\"large\"
-                                    data-show-count=\"true\"
-                                    aria-label=\"Star themeselection/sneat-html-admin-template-free on GitHub\">Star</a>
-                            </li>
+
                             {% if app.user %}
                             <!-- User -->
                             <li class=\"nav-item navbar-dropdown dropdown-user dropdown\">
                                 <a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\"
                                     data-bs-toggle=\"dropdown\">
                                     <div class=\"avatar avatar-online\">
-                                        <img src=\"assets/img/avatars/1.png\" alt class=\"w-px-40 h-auto rounded-circle\" />
+                                        <img src=\"\" alt class=\"w-px-40 h-auto rounded-circle\" />
                                     </div>
                                 </a>
                                 <ul class=\"dropdown-menu dropdown-menu-end\">
@@ -1036,14 +1120,23 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                             <div class=\"d-flex\">
                                                 <div class=\"flex-shrink-0 me-3\">
                                                     <div class=\"avatar avatar-online\">
-                                                        <img src=\"assets/img/avatars/1.png\" alt
+                                                        <img src=\"\" alt
                                                             class=\"w-px-40 h-auto rounded-circle\" />
                                                     </div>
                                                 </div>
                                                 <div class=\"flex-grow-1\">
                                                     <span class=\"fw-semibold d-block\">{{ app.user.nom }} {{ app.user.prenom }}</span>
-                                                    <small class=\"text-muted\">{{ app.user.roles |join(', ') }}</small>
+                                                    <small class=\"text-muted\">
+                                                        {% for role in app.user.roles %}
+                                                        {% if role == 'ROLE_ADMIN' %}
+                                                        Administrateur
+                                                        {% elseif role == 'ROLE_USER' %}
+                                                        Utilisateur
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                    </small>
                                                 </div>
+
                                             </div>
                                         </a>
                                     </li>
@@ -1101,24 +1194,9 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                     document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                <a href=\"https://themeselection.com\" target=\"_blank\" class=\"footer-link fw-bolder\">ThemeSelection</a>
+                                <a href=\"https://dymotechnologie.com\" target=\"_blank\" class=\"footer-link fw-bolder\">DymoTechnologie</a>
                             </div>
-                            <div>
-                                <a href=\"https://themeselection.com/license/\" class=\"footer-link me-4\" target=\"_blank\">License</a>
-                                <a href=\"https://themeselection.com/\" target=\"_blank\" class=\"footer-link me-4\">More
-                                    Themes</a>
 
-                                <a
-                                    href=\"https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/\"
-                                    target=\"_blank\"
-                                    class=\"footer-link me-4\">Documentation</a>
-
-                                <a
-                                    href=\"https://github.com/themeselection/sneat-html-admin-template-free/issues\"
-                                    target=\"_blank\"
-                                    class=\"footer-link me-4\">Support</a>
-                            </div>
-                        </div>
                     </footer>
                     <!-- / Footer -->
 
@@ -1165,6 +1243,6 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
 </body>
 
-</html>", "base.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\base.html.twig");
     }
 }

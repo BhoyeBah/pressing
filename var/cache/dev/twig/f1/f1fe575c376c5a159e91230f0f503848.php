@@ -243,14 +243,15 @@ class __TwigTemplate_233150aa0948c06f9b944b5bc7066ec0 extends Template
             yield "\"
                                 class=\"btn btn-success btn-sm\"><i class=\"bx bx-book\"></i>
                             </a>
-
-                            ";
+                        </td>
+                    </tr>
+                    ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 71
+            // line 72
             yield "                    <tr>
-                        <td colspan=\"5\" class=\"text-center\">Aucune commande trouvée</td>
+                        <td colspan=\"7\" class=\"text-center\">Aucune commande trouvée</td>
                     </tr>
 
                     ";
@@ -258,7 +259,7 @@ class __TwigTemplate_233150aa0948c06f9b944b5bc7066ec0 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commande'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 76
+        // line 77
         yield "                </tbody>
             </table>
         </div>
@@ -296,7 +297,7 @@ class __TwigTemplate_233150aa0948c06f9b944b5bc7066ec0 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  262 => 76,  252 => 71,  241 => 66,  234 => 61,  228 => 57,  224 => 55,  220 => 53,  218 => 52,  209 => 47,  203 => 46,  200 => 45,  195 => 44,  193 => 43,  186 => 40,  184 => 39,  179 => 37,  174 => 35,  170 => 33,  166 => 31,  161 => 30,  152 => 23,  150 => 22,  147 => 20,  144 => 18,  132 => 7,  122 => 6,  102 => 4,  82 => 3,  62 => 2,  39 => 1,);
+        return array (  263 => 77,  253 => 72,  241 => 66,  234 => 61,  228 => 57,  224 => 55,  220 => 53,  218 => 52,  209 => 47,  203 => 46,  200 => 45,  195 => 44,  193 => 43,  186 => 40,  184 => 39,  179 => 37,  174 => 35,  170 => 33,  166 => 31,  161 => 30,  152 => 23,  150 => 22,  147 => 20,  144 => 18,  132 => 7,  122 => 6,  102 => 4,  82 => 3,  62 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -369,10 +370,11 @@ class __TwigTemplate_233150aa0948c06f9b944b5bc7066ec0 extends Template
                             <a href=\"{{ path('app_commande_show', {'id': commande.id}) }}\"
                                 class=\"btn btn-success btn-sm\"><i class=\"bx bx-book\"></i>
                             </a>
-
-                            {% else %}
+                        </td>
+                    </tr>
+                    {% else %}
                     <tr>
-                        <td colspan=\"5\" class=\"text-center\">Aucune commande trouvée</td>
+                        <td colspan=\"7\" class=\"text-center\">Aucune commande trouvée</td>
                     </tr>
 
                     {% endfor %}
@@ -382,6 +384,6 @@ class __TwigTemplate_233150aa0948c06f9b944b5bc7066ec0 extends Template
     </div>
 </div>
 
-{% endblock %}", "commande/facture_paye.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\commande\\facture_paye.html.twig");
+{% endblock %}", "commande/facture_paye.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\commande\\facture_paye.html.twig");
     }
 }

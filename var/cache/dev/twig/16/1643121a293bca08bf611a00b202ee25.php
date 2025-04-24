@@ -27,6 +27,8 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'config' => [$this, 'block_config'],
+            'client' => [$this, 'block_client'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -66,7 +68,27 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "users index";
+        yield "Listes des clients";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 4
+    public function block_config($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        yield "active";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -77,6 +99,26 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
     }
 
     // line 5
+    public function block_client($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "client"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "client"));
+
+        yield "active";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,12 +128,12 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "
 
     <div class=\"card\">
         <h5 class=\"card-header\">Liste des clients <a href=\"";
-        // line 9
+        // line 10
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_new");
         yield "\" class=\"btn btn-info mx-3\">Nouvel
                 client</a></h5>
@@ -111,9 +153,9 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
                     </thead>
                     <tbody>
                     ";
-        // line 26
+        // line 27
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new RuntimeError('Variable "clients" does not exist.', 26, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["clients"]) || array_key_exists("clients", $context) ? $context["clients"] : (function () { throw new RuntimeError('Variable "clients" does not exist.', 27, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -129,45 +171,45 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 27
+            // line 28
             yield "                        <tr>
                             <td>";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "numero", [], "any", false, false, false, 28), "html", null, true);
-            yield "</td>
-                            <td>";
             // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "nom", [], "any", false, false, false, 29), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "numero", [], "any", false, false, false, 29), "html", null, true);
             yield "</td>
                             <td>";
             // line 30
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "prenom", [], "any", false, false, false, 30), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "nom", [], "any", false, false, false, 30), "html", null, true);
             yield "</td>
                             <td>";
             // line 31
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "telephone", [], "any", false, false, false, 31), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "prenom", [], "any", false, false, false, 31), "html", null, true);
             yield "</td>
                             <td>";
             // line 32
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "adresse", [], "any", false, false, false, 32), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "telephone", [], "any", false, false, false, 32), "html", null, true);
             yield "</td>
                             <td>";
             // line 33
-            yield ((CoreExtension::getAttribute($this->env, $this->source, $context["client"], "state", [], "any", false, false, false, 33)) ? ("Yes") : ("No"));
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["client"], "adresse", [], "any", false, false, false, 33), "html", null, true);
+            yield "</td>
+                            <td>";
+            // line 34
+            yield ((CoreExtension::getAttribute($this->env, $this->source, $context["client"], "state", [], "any", false, false, false, 34)) ? ("Yes") : ("No"));
             yield "</td>
                             <td>
                                 <a href=\"";
-            // line 35
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 36)]), "html", null, true);
             yield "\"
                                    class=\"btn btn-primary btn-sm\"><i class=\"bx bx-show\"></i></a>
                                 <a href=\"";
-            // line 37
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+            // line 38
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["client"], "id", [], "any", false, false, false, 38)]), "html", null, true);
             yield "\"
                                    class=\"btn btn-info btn-sm\"><i class=\"bx bx-edit\"></i></a>
                                 ";
-            // line 39
+            // line 40
             yield Twig\Extension\CoreExtension::include($this->env, $context, "client/_delete_form.html.twig");
             yield "
                             </td>
@@ -184,7 +226,7 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 43
+            // line 44
             yield "                        <tr>
                             <td colspan=\"9\">no records found</td>
                         </tr>
@@ -193,7 +235,7 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 48
         yield "                    </tbody>
                 </table>
             </div>
@@ -230,15 +272,16 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
      */
     public function getDebugInfo()
     {
-        return array (  197 => 47,  188 => 43,  171 => 39,  166 => 37,  161 => 35,  156 => 33,  152 => 32,  148 => 31,  144 => 30,  140 => 29,  136 => 28,  133 => 27,  115 => 26,  95 => 9,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  239 => 48,  230 => 44,  213 => 40,  208 => 38,  203 => 36,  198 => 34,  194 => 33,  190 => 32,  186 => 31,  182 => 30,  178 => 29,  175 => 28,  157 => 27,  137 => 10,  132 => 7,  122 => 6,  102 => 5,  82 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}users index{% endblock %}
-
+{% block title %}Listes des clients{% endblock %}
+{% block config %}active{% endblock %}
+{% block client %}active{% endblock %}
 {% block body %}
 
 
@@ -287,6 +330,6 @@ class __TwigTemplate_4c1f69df2d029abc4b2b50792fc60acd extends Template
         </div>
     </div>
 {% endblock %}
-", "client/index.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\client\\index.html.twig");
+", "client/index.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\client\\index.html.twig");
     }
 }

@@ -87,17 +87,19 @@ class __TwigTemplate_ff2e96360357d5328e784719207c755a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Create new Employe</h1>
-
-    ";
+        yield "
+<h4 class=\"fw-bold py-3 mb-4\"><span class=\"text-muted fw-light\">Formulaire/</span> d'ajout d'un employé
+    <a href=\"";
         // line 8
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_index");
+        yield "\" class=\"btn btn-info\"><i class=\"bx bx-list\"></i>Liste des clients</a>
+</h4>
+
+";
+        // line 11
         yield Twig\Extension\CoreExtension::include($this->env, $context, "employe/_form.html.twig");
         yield "
 
-    <a href=\"";
-        // line 10
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_index");
-        yield "\">back to list</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -129,7 +131,7 @@ class __TwigTemplate_ff2e96360357d5328e784719207c755a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  99 => 10,  94 => 8,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  100 => 11,  94 => 8,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -139,12 +141,13 @@ class __TwigTemplate_ff2e96360357d5328e784719207c755a extends Template
 {% block title %}New Employe{% endblock %}
 
 {% block body %}
-    <h1>Create new Employe</h1>
 
-    {{ include('employe/_form.html.twig') }}
+<h4 class=\"fw-bold py-3 mb-4\"><span class=\"text-muted fw-light\">Formulaire/</span> d'ajout d'un employé
+    <a href=\"{{ path('app_employe_index') }}\" class=\"btn btn-info\"><i class=\"bx bx-list\"></i>Liste des clients</a>
+</h4>
 
-    <a href=\"{{ path('app_employe_index') }}\">back to list</a>
-{% endblock %}
-", "employe/new.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\employe\\new.html.twig");
+{{ include('employe/_form.html.twig') }}
+
+{% endblock %}", "employe/new.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\employe\\new.html.twig");
     }
 }

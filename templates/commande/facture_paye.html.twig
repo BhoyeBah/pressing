@@ -66,10 +66,11 @@
                             <a href="{{ path('app_commande_show', {'id': commande.id}) }}"
                                 class="btn btn-success btn-sm"><i class="bx bx-book"></i>
                             </a>
-
-                            {% else %}
+                        </td>
+                    </tr>
+                    {% else %}
                     <tr>
-                        <td colspan="5" class="text-center">Aucune commande trouvée</td>
+                        <td colspan="7" class="text-center">Aucune commande trouvée</td>
                     </tr>
 
                     {% endfor %}

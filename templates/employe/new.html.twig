@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}New Employe{% endblock %}
-
+{% block config %}active{% endblock %}
+{% block employes %}active{% endblock %}
 {% block body %}
-    <h1>Create new Employe</h1>
 
-    {{ include('employe/_form.html.twig') }}
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> d'ajout d'un employé
+    <a href="{{ path('app_employe_index') }}" class="btn btn-info"><i class="bx bx-list"></i>Liste des clients</a>
+</h4>
 
-    <a href="{{ path('app_employe_index') }}">back to list</a>
+{{ include('employe/_form.html.twig') }}
+
 {% endblock %}
