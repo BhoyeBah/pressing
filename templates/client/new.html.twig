@@ -10,5 +10,6 @@
         <a href="{{ path('app_client_index') }}" class="btn btn-info"><i class="bx bx-list"></i>Liste des clients</a>
     </h4>
 
+    {% include 'partials/_flash.html.twig' %}
     {{ include('client/_form.html.twig') }}
 {% endblock %}

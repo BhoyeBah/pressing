@@ -27,6 +27,8 @@ class __TwigTemplate_9b7171cbbb9111807c15845493303e57 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'config' => [$this, 'block_config'],
+            'articles' => [$this, 'block_articles'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -76,7 +78,47 @@ class __TwigTemplate_9b7171cbbb9111807c15845493303e57 extends Template
         return; yield '';
     }
 
+    // line 4
+    public function block_config($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "config"));
+
+        yield "active";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
     // line 5
+    public function block_articles($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "articles"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "articles"));
+
+        yield "active";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,17 +128,17 @@ class __TwigTemplate_9b7171cbbb9111807c15845493303e57 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 8
         yield "
     <h4 class=\"fw-bold py-3 mb-4\"><span class=\"text-muted fw-light\">Formulaire/</span> d'ajout d'un article
         <a href=\"";
-        // line 8
+        // line 10
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_articles_index");
         yield "\" class=\"btn btn-info\"><i class=\"bx bx-list\"></i>Liste des articles</a>
     </h4>
 
     ";
-        // line 11
+        // line 13
         yield Twig\Extension\CoreExtension::include($this->env, $context, "articles/_form.html.twig");
         yield "
 ";
@@ -130,7 +172,7 @@ class __TwigTemplate_9b7171cbbb9111807c15845493303e57 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  100 => 11,  94 => 8,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  142 => 13,  136 => 10,  132 => 8,  122 => 7,  102 => 5,  82 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -138,6 +180,8 @@ class __TwigTemplate_9b7171cbbb9111807c15845493303e57 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}New Articles{% endblock %}
+{% block config %}active{% endblock %}
+{% block articles %}active{% endblock %}
 
 {% block body %}
 
@@ -147,6 +191,6 @@ class __TwigTemplate_9b7171cbbb9111807c15845493303e57 extends Template
 
     {{ include('articles/_form.html.twig') }}
 {% endblock %}
-", "articles/new.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\articles\\new.html.twig");
+", "articles/new.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\articles\\new.html.twig");
     }
 }

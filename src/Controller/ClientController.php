@@ -63,7 +63,7 @@ class ClientController extends AbstractController
 
             }catch (UniqueConstraintViolationException $e){
 
-                $this->addFlash('error', 'Le numéro de téléphone du client est déjà utilisé !!!!❌');
+                $this->addFlash('danger', 'Le numéro de téléphone du client est déjà utilisé !!!!❌');
             }
         }
 
@@ -98,7 +98,7 @@ class ClientController extends AbstractController
 
         }catch (UniqueConstraintViolationException $e){
 
-            $this->addFlash('error', 'Le numéro de téléphone du client est déjà utilisé !!!!❌');
+            $this->addFlash('danger', 'Le numéro de téléphone du client est déjà utilisé !!!!❌');
         }
 
         return $this->render('client/edit.html.twig', [

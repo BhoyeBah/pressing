@@ -122,11 +122,13 @@ class CommandeRepository extends ServiceEntityRepository
     public function orderSearch(string $query,$pressing)
     {
         return $this->createQueryBuilder('c')
-            ->where('c.numero LIKE :query AND c.pressing = :pressing')
-            ->setParameter('query', '%' . $query . '%')
-            ->setParameter('pressing', $pressing)
-            ->getQuery()
-            ->getResult();
+        ->leftJoin('c.client', 'cl') // jointure avec le client
+        ->where('c.numero LIKE :query OR cl.telephone LIKE :query') // numéro commande OU téléphone client
+        ->andWhere('c.pressing = :pressing')
+        ->setParameter('query', '%' . $query . '%')
+        ->setParameter('pressing', $pressing)
+        ->getQuery()
+        ->getResult();
     }
     //    /**
     //     * @return Commande[] Returns an array of Commande objects

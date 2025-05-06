@@ -66,7 +66,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
     <meta name=\"viewport\"
         content=\"width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0\" />
 
-    <title>Dashboard | POS PRESSING</title>
+    <title>Tableau de board</title>
 
     <meta name=\"description\" content=\"\" />
 
@@ -469,7 +469,7 @@ $context["role"] == "ROLE_USER")) {
                                     <li>
                                         <div class=\"dropdown-divider\"></div>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a class=\"dropdown-item\" href=\"#\">
                                             <i class=\"bx bx-user me-2\"></i>
                                             <span class=\"align-middle\">My Profile</span>
@@ -480,7 +480,7 @@ $context["role"] == "ROLE_USER")) {
                                             <i class=\"bx bx-cog me-2\"></i>
                                             <span class=\"align-middle\">Settings</span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <div class=\"dropdown-divider\"></div>
                                     </li>
@@ -864,7 +864,7 @@ $context["role"] == "ROLE_USER")) {
     <meta name=\"viewport\"
         content=\"width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0\" />
 
-    <title>Dashboard | POS PRESSING</title>
+    <title>Tableau de board</title>
 
     <meta name=\"description\" content=\"\" />
 
@@ -1143,7 +1143,7 @@ $context["role"] == "ROLE_USER")) {
                                     <li>
                                         <div class=\"dropdown-divider\"></div>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a class=\"dropdown-item\" href=\"#\">
                                             <i class=\"bx bx-user me-2\"></i>
                                             <span class=\"align-middle\">My Profile</span>
@@ -1154,7 +1154,7 @@ $context["role"] == "ROLE_USER")) {
                                             <i class=\"bx bx-cog me-2\"></i>
                                             <span class=\"align-middle\">Settings</span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <div class=\"dropdown-divider\"></div>
                                     </li>

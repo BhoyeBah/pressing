@@ -185,6 +185,6 @@ class __TwigTemplate_a98fb46ced83a1a2d5f468630502d0ed extends Template
         </div>
     </div>
 {% endblock %}
-", "articles/_form.html.twig", "C:\\xampp\\htdocs\\myapp\\templates\\articles\\_form.html.twig");
+", "articles/_form.html.twig", "C:\\xampp\\htdocs\\pressing\\templates\\articles\\_form.html.twig");
     }
 }

@@ -7,7 +7,7 @@ namespace Proxies\__CG__\App\Entity;
  */
 class Client extends \App\Entity\Client implements \Doctrine\ORM\Proxy\InternalProxy
 {
-    use \Symfony\Component\VarExporter\LazyGhostTrait {
+     use \Symfony\Component\VarExporter\LazyGhostTrait {
         initializeLazyObject as private;
         setLazyObjectAsInitialized as public __setInitialized;
         isLazyObjectInitialized as private;
@@ -42,7 +42,7 @@ class Client extends \App\Entity\Client implements \Doctrine\ORM\Proxy\InternalP
         'state' => [parent::class, 'state', null],
         'telephone' => [parent::class, 'telephone', null],
         'updated_at' => [parent::class, 'updated_at', null],
-    ];
+    ];
 
     public function __isInitialized(): bool
     {

@@ -77,7 +77,7 @@ class CommandeController extends AbstractController
 
             if ($commande->getDateLivraison() < $curentDate) {
                 return $this->redirectToRoute('app_commande_new');
-                $this->addFlash('error', 'La date de livraison ne peut pas être inférieure à la date du jour.');
+                $this->addFlash('danger', 'La date de livraison ne peut pas être inférieure à la date du jour.');
             } else {
                 // Récupération des données du formulaire
                 $formData = $request->request->all(); // Récupère toutes les données du formulaire
@@ -164,7 +164,7 @@ class CommandeController extends AbstractController
                     $this->addFlash('success', 'Commande créée avec succès.');
                     return $this->redirectToRoute('commande_print_Detail', ['commande' => $commande->getId()]);
                 } else {
-                    $this->addFlash('error', 'Les données des articles ne sont pas au format attendu.');
+                    $this->addFlash('danger', 'Les données des articles ne sont pas au format attendu.');
                 }
             }
         }
@@ -208,7 +208,7 @@ class CommandeController extends AbstractController
         $resteAPayer = $commande->getResteAPayer();
         // Vérifier que le montant reçu ne dépasse pas le montant restant à payer
         if ($montantRecu > $resteAPayer) {
-            $this->addFlash('error', 'Le montant saisi ne doit pas dépasser le montant à payer.');
+            $this->addFlash('danger', 'Le montant saisi ne doit pas dépasser le montant à payer.');
             return $this->redirectToRoute('app_commande_index', ['id' => $commandeId]);
         }
         $commandeDetails = $commande->getCommandeDetails(); // ou getDetailsCommande()

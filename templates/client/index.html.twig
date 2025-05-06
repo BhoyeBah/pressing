@@ -6,48 +6,46 @@
 {% block body %}
 
 
-    <div class="card">
-        <h5 class="card-header">Liste des clients <a href="{{ path('app_client_new') }}" class="btn btn-info mx-3">Nouvel
-                client</a></h5>
-        <div class="card-body">
-            <div class="table-responsive text-nowrap">
-                <table class="table table-bordered" id="myTable">
-                    <thead>
+<div class="card">
+    <h5 class="card-header">Liste des clients <a href="{{ path('app_client_new') }}" class="btn btn-info mx-3">Nouvel client</a>
+        </h5>
+    {% include 'partials/_flash.html.twig' %}
+    <div class="card-body">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-bordered" id="myTable">
+                <thead>
                     <tr>
-                        <th>Numero</th>
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Telephone</th>
                         <th>Adresse</th>
-                        <th>State</th>
                         <th>actions</th>
                     </tr>
-                    </thead>
-                    <tbody>
+                </thead>
+                <tbody>
                     {% for client in clients %}
-                        <tr>
-                            <td>{{ client.numero }}</td>
-                            <td>{{ client.nom }}</td>
-                            <td>{{ client.prenom }}</td>
-                            <td>{{ client.telephone }}</td>
-                            <td>{{ client.adresse }}</td>
-                            <td>{{ client.state ? 'Yes' : 'No' }}</td>
-                            <td>
-                                <a href="{{ path('app_client_show', {'id': client.id}) }}"
-                                   class="btn btn-primary btn-sm"><i class="bx bx-show"></i></a>
-                                <a href="{{ path('app_client_edit', {'id': client.id}) }}"
-                                   class="btn btn-info btn-sm"><i class="bx bx-edit"></i></a>
-                                {{ include('client/_delete_form.html.twig') }}
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>{{ client.nom }}</td>
+                        <td>{{ client.prenom }}</td>
+                        <td>{{ client.telephone }}</td>
+                        <td>{{ client.adresse }}</td>
+                        <td>{{ client.state ? 'Yes' : 'No' }}</td>
+                        <td>
+                            <a href="{{ path('app_client_show', {'id': client.id}) }}"
+                                class="btn btn-primary btn-sm"><i class="bx bx-show"></i></a>
+                            <a href="{{ path('app_client_edit', {'id': client.id}) }}"
+                                class="btn btn-info btn-sm"><i class="bx bx-edit"></i></a>
+                            {{ include('client/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
                     {% else %}
-                        <tr>
-                            <td colspan="9">no records found</td>
-                        </tr>
+                    <tr>
+                        <td colspan="9">no records found</td>
+                    </tr>
                     {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 {% endblock %}

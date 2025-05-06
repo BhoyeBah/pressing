@@ -5,24 +5,25 @@
 {% block body %}
 
 <div class="card">
-    <h5 class="card-header">Liste des Membre <a href="{{ path('app_membre_new') }}" class="btn btn-info mx-3">Nouvel
-            Membre</a></h5>
+    <h5 class="card-header">Liste des Membre
+        <a href="{{ path('app_membre_new') }}" class="btn btn-info mx-3">Nouvel Membre</a>
+    </h5>
+    {% include 'partials/_flash.html.twig' %}
     <div class="card-body">
         <div class="table-responsive text-nowrap">
             <table class="table table-bordered" id="myTable">
                 <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Email</th>
-                    <th>Telephone</th>
-                    <th>Adresse</th>
-                    <th>actions</th>
-                </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                        <th>Adresse</th>
+                        <th>actions</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {% for membre in membres %}
+                    {% for membre in membres %}
                     <tr>
                         <td>{{ membre.id }}</td>
                         <td>{{ membre.nom }}</td>
@@ -32,19 +33,19 @@
                         <td>{{ membre.adresse }}</td>
                         <td>
                             <a href="{{ path('app_membre_show', {'id': membre.id}) }}" class="btn btn-primary btn-sm"><i
-                                        class="bx bx-show"></i></a>
+                                    class="bx bx-show"></i></a>
                             <a href="{{ path('app_membre_edit', {'id': membre.id}) }}" class="btn btn-info btn-sm"><i
-                                        class="bx bx-edit"></i></a>
+                                    class="bx bx-edit"></i></a>
                             {{ include('membre/_delete_form.html.twig') }}
                         </td>
                     </tr>
-                {% else %}
+                    {% else %}
                     <tr>
                         <td colspan="7">no records found</td>
                     </tr>
-                {% endfor %}
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
-{% endblock %}
+    {% endblock %}

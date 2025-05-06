@@ -20,8 +20,8 @@ class CommandeType extends AbstractType
             ->add('client', EntityType::class, [
                 'class' => Client::class,
                 'choices' => $options['clients'], // Utilisez les clients passés en option
-                'choice_label' => function(Client $client) {
-                    return $client->getNom().' '.$client->getPrenom(); // Afficher le nom et le prénom
+                'choice_label' => function (Client $client) {
+                    return $client->getNom() . ' ' . $client->getPrenom() . ' (' . $client->getTelephone() . ')';
                 },
                 'placeholder' => 'Choisissez un client',
                 'required' => true, // Ajustez en fonction de vos besoins

@@ -7,7 +7,7 @@ namespace Proxies\__CG__\App\Entity;
  */
 class Pressing extends \App\Entity\Pressing implements \Doctrine\ORM\Proxy\InternalProxy
 {
-    use \Symfony\Component\VarExporter\LazyGhostTrait {
+     use \Symfony\Component\VarExporter\LazyGhostTrait {
         initializeLazyObject as private;
         setLazyObjectAsInitialized as public __setInitialized;
         isLazyObjectInitialized as private;
@@ -54,7 +54,7 @@ class Pressing extends \App\Entity\Pressing implements \Doctrine\ORM\Proxy\Inter
         'paiements' => [parent::class, 'paiements', null],
         'telephone' => [parent::class, 'telephone', null],
         'user' => [parent::class, 'user', null],
-    ];
+    ];
 
     public function __isInitialized(): bool
     {
