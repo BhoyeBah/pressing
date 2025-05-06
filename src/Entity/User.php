@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
@@ -23,6 +24,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
+    #[Assert\NotBlank(message: 'L’email est obligatoire.')]
+    #[Assert\Email(message: 'Adresse email invalide.')]
     private ?string $email = null;
 
     /**
@@ -35,15 +38,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Le mot de passe est obligatoire.')]
+    #[Assert\Length(
+        min: 6,
+        minMessage: 'Le mot de passe doit contenir au moins {{ limit }} caractères.'
+    )]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le nom est obligatoire.')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le prénom est obligatoire.')]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le téléphone est obligatoire.')]
+    #[Assert\Regex(
+        pattern: '/^\+?[0-9]{7,15}$/',
+        message: 'Numéro de téléphone invalide.'
+    )]
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
@@ -62,7 +77,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Employe::class, mappedBy: 'user')]
     private Collection $employes;
 
-    #[ORM\OneToOne(mappedBy: 'user',cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'user', cascade: ['persist', 'remove'])]
     private ?Membre $membre = null;
 
     public function __construct()
@@ -259,5 +274,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
 }

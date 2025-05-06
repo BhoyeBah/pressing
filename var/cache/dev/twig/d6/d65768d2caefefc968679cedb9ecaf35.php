@@ -197,10 +197,7 @@ class __TwigTemplate_75f81cd38744ceb7dbdbbd06eefe3e82 extends Template
 
     <div class=\"invoice\">
         <div class=\"header\">
-            <img class=\"logo\" src=\"";
-        // line 154
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logor.jpg"), "html", null, true);
-        yield "\" alt=\"Logo\">
+            <!-- <img class=\"logo\" src=\"\" alt=\"Logo\"> -->
             <div class=\"company-info\">
                 <div class=\"company-name\">ROYAL PRESSING</div>
                 <div class=\"company-name\">NETTOYAGE À SEC</div>
@@ -386,7 +383,7 @@ class __TwigTemplate_75f81cd38744ceb7dbdbbd06eefe3e82 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  346 => 221,  342 => 219,  338 => 217,  336 => 216,  330 => 213,  322 => 209,  316 => 208,  313 => 207,  308 => 206,  306 => 205,  301 => 203,  297 => 202,  291 => 198,  282 => 194,  274 => 191,  270 => 190,  266 => 189,  263 => 188,  258 => 187,  241 => 173,  237 => 172,  233 => 171,  229 => 170,  223 => 169,  216 => 165,  202 => 154,  195 => 150,  44 => 1,);
+        return array (  343 => 221,  339 => 219,  335 => 217,  333 => 216,  327 => 213,  319 => 209,  313 => 208,  310 => 207,  305 => 206,  303 => 205,  298 => 203,  294 => 202,  288 => 198,  279 => 194,  271 => 191,  267 => 190,  263 => 189,  260 => 188,  255 => 187,  238 => 173,  234 => 172,  230 => 171,  226 => 170,  220 => 169,  213 => 165,  195 => 150,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -544,7 +541,7 @@ class __TwigTemplate_75f81cd38744ceb7dbdbbd06eefe3e82 extends Template
 
     <div class=\"invoice\">
         <div class=\"header\">
-            <img class=\"logo\" src=\"{{ asset('assets/img/logor.jpg') }}\" alt=\"Logo\">
+            <!-- <img class=\"logo\" src=\"\" alt=\"Logo\"> -->
             <div class=\"company-info\">
                 <div class=\"company-name\">ROYAL PRESSING</div>
                 <div class=\"company-name\">NETTOYAGE À SEC</div>

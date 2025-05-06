@@ -29,8 +29,8 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
         $this->blocks = [
             'dashboard' => [$this, 'block_dashboard'],
-            'gestion' => [$this, 'block_gestion'],
             'new_facture' => [$this, 'block_new_facture'],
+            'gestion' => [$this, 'block_gestion'],
             'facture_impaye' => [$this, 'block_facture_impaye'],
             'facture_paye' => [$this, 'block_facture_paye'],
             'all_facture' => [$this, 'block_all_facture'],
@@ -145,56 +145,8 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
             <aside id=\"layout-menu\" class=\"layout-menu menu-vertical menu bg-menu-theme\">
                 <div class=\"app-brand demo\">
                     <a href=\"/\" class=\"app-brand-link\">
-                        <span class=\"app-brand-logo demo\">
-                            <svg
-                                width=\"25\"
-                                viewBox=\"0 0 25 42\"
-                                version=\"1.1\"
-                                xmlns=\"http://www.w3.org/2000/svg\"
-                                xmlns:xlink=\"http://www.w3.org/1999/xlink\">
-                                <defs>
-                                    <path
-                                        d=\"M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z\"
-                                        id=\"path-1\"></path>
-                                    <path
-                                        d=\"M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z\"
-                                        id=\"path-3\"></path>
-                                    <path
-                                        d=\"M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z\"
-                                        id=\"path-4\"></path>
-                                    <path
-                                        d=\"M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z\"
-                                        id=\"path-5\"></path>
-                                </defs>
-                                <g id=\"g-app-brand\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">
-                                    <g id=\"Brand-Logo\" transform=\"translate(-27.000000, -15.000000)\">
-                                        <g id=\"Icon\" transform=\"translate(27.000000, 15.000000)\">
-                                            <g id=\"Mask\" transform=\"translate(0.000000, 8.000000)\">
-                                                <mask id=\"mask-2\" fill=\"white\">
-                                                    <use xlink:href=\"#path-1\"></use>
-                                                </mask>
-                                                <use fill=\"#696cff\" xlink:href=\"#path-1\"></use>
-                                                <g id=\"Path-3\" mask=\"url(#mask-2)\">
-                                                    <use fill=\"#696cff\" xlink:href=\"#path-3\"></use>
-                                                    <use fill-opacity=\"0.2\" fill=\"#FFFFFF\" xlink:href=\"#path-3\"></use>
-                                                </g>
-                                                <g id=\"Path-4\" mask=\"url(#mask-2)\">
-                                                    <use fill=\"#696cff\" xlink:href=\"#path-4\"></use>
-                                                    <use fill-opacity=\"0.2\" fill=\"#FFFFFF\" xlink:href=\"#path-4\"></use>
-                                                </g>
-                                            </g>
-                                            <g
-                                                id=\"Triangle\"
-                                                transform=\"translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) \">
-                                                <use fill=\"#696cff\" xlink:href=\"#path-5\"></use>
-                                                <use fill-opacity=\"0.2\" fill=\"#FFFFFF\" xlink:href=\"#path-5\"></use>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </span>
-                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">press</span>
+
+                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">ROYAL-PRESSING</span>
                     </a>
 
                     <a href=\"javascript:void(0);\" class=\"layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none\">
@@ -207,7 +159,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                 <ul class=\"menu-inner py-1\">
                     <!-- Dashboard -->
                     <li class=\"menu-item ";
-        // line 128
+        // line 80
         yield from $this->unwrap()->yieldBlock('dashboard', $context, $blocks);
         yield "\">
                         <a href=\"/\" class=\"menu-link\">
@@ -216,60 +168,64 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                         </a>
                     </li>
 
+                    ";
+        // line 87
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 88
+            yield "
+                    <li class=\"menu-item ";
+            // line 89
+            yield from $this->unwrap()->yieldBlock('new_facture', $context, $blocks);
+            yield "\">
+                        <a href=\"";
+            // line 90
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commande_new");
+            yield "\" class=\"menu-link\">
+                            <i class=\"menu-icon tf-icons bx bx-home-circle\"></i>
+                            <div data-i18n=\"Analytics\">Nouvelle facture</div>
+                        </a>
+                    </li>
+
                     <!-- Layouts -->
 
                     <li class=\"menu-item ";
-        // line 137
-        yield from $this->unwrap()->yieldBlock('gestion', $context, $blocks);
-        yield "\">
+            // line 98
+            yield from $this->unwrap()->yieldBlock('gestion', $context, $blocks);
+            yield "\">
                         <a href=\"javascript:void(0);\" class=\"menu-link menu-toggle\">
                             <i class=\"menu-icon tf-icons bx bxs-printer\"></i>
                             <div data-i18n=\"Layouts\">Gestion des factures</div>
                         </a>
 
                         <ul class=\"menu-sub\">
-                            ";
-        // line 144
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 145
-            yield "                            <li class=\"menu-item ";
-            yield from $this->unwrap()->yieldBlock('new_facture', $context, $blocks);
-            yield "\">
-                                <a href=\"";
-            // line 146
-            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commande_new");
-            yield "\" class=\"menu-link\">
-                                    <div data-i18n=\"Without menu\">Nouvel facture</div>
-                                </a>
-                            </li>
                             <li class=\"menu-item ";
-            // line 150
+            // line 105
             yield from $this->unwrap()->yieldBlock('facture_impaye', $context, $blocks);
             yield "\">
                                 <a href=\"";
-            // line 151
+            // line 106
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande_impaye");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Container\">Factures non payées</div>
                                 </a>
                             </li>
                             <li class=\"menu-item ";
-            // line 155
+            // line 110
             yield from $this->unwrap()->yieldBlock('facture_paye', $context, $blocks);
             yield "\">
                                 <a href=\"";
-            // line 156
+            // line 111
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande_paye");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without navbar\">Factures payées</div>
                                 </a>
                             </li>
                             <li class=\"menu-item ";
-            // line 160
+            // line 115
             yield from $this->unwrap()->yieldBlock('all_facture', $context, $blocks);
             yield "\">
                                 <a href=\"";
-            // line 161
+            // line 116
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commande_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Container\">Listes des factures</div>
@@ -278,7 +234,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                         </ul>
                     </li>
                     <li class=\"menu-item ";
-            // line 167
+            // line 122
             yield from $this->unwrap()->yieldBlock('config', $context, $blocks);
             yield "\">
                         <a href=\"javascript:void(0);\" class=\"menu-link menu-toggle\">
@@ -288,33 +244,33 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
                         <ul class=\"menu-sub\">
                             <li class=\"menu-item ";
-            // line 174
+            // line 129
             yield from $this->unwrap()->yieldBlock('client', $context, $blocks);
             yield "\">
                                 <a href=\"";
-            // line 175
+            // line 130
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Clients</div>
                                 </a>
                             </li>
                             <li class=\"menu-item ";
-            // line 179
+            // line 134
             yield from $this->unwrap()->yieldBlock('articles', $context, $blocks);
             yield "\">
                                 <a href=\"";
-            // line 180
+            // line 135
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_articles_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Articles</div>
                                 </a>
                             </li>
                             <li class=\"menu-item ";
-            // line 184
+            // line 139
             yield from $this->unwrap()->yieldBlock('employes', $context, $blocks);
             yield "\">
                                 <a href=\"";
-            // line 185
+            // line 140
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_employe_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Employés</div>
@@ -322,14 +278,14 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                             ";
         }
-        // line 190
+        // line 145
         yield "                        </ul>
                     </li>
 
                     ";
-        // line 193
+        // line 148
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 194
+            // line 149
             yield "                    <li class=\"menu-item\">
                         <a href=\"javascript:void(0);\" class=\"menu-link menu-toggle\">
                             <i class=\"menu-icon tf-icons bx bx-layout\"></i>
@@ -340,7 +296,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
 
                             <li class=\"menu-item\">
                                 <a href=\"";
-            // line 203
+            // line 158
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_users_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Container\">Utilisateurs</div>
@@ -348,7 +304,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                             <li class=\"menu-item\">
                                 <a href=\"";
-            // line 208
+            // line 163
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pressing_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Pressing</div>
@@ -356,7 +312,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                             <li class=\"menu-item\">
                                 <a href=\"";
-            // line 213
+            // line 168
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_membre_index");
             yield "\" class=\"menu-link\">
                                     <div data-i18n=\"Without menu\">Membres</div>
@@ -364,7 +320,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             </li>
                             ";
         }
-        // line 218
+        // line 173
         yield "
                         </ul>
                     </li>
@@ -388,7 +344,7 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                     <div class=\"navbar-nav-right d-flex align-items-center\" id=\"navbar-collapse\">
                         <!-- Search -->
                         <form method=\"get\" action=\"";
-        // line 240
+        // line 195
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recherche_dashboard");
         yield "\" class=\"navbar-nav align-items-center\">
                             <div class=\"nav-item d-flex align-items-center\">
@@ -407,15 +363,18 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                             <!-- Place this tag where you want the button to render. -->
 
                             ";
-        // line 256
-        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 256, $this->source); })()), "user", [], "any", false, false, false, 256)) {
-            // line 257
+        // line 211
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 211, $this->source); })()), "user", [], "any", false, false, false, 211)) {
+            // line 212
             yield "                            <!-- User -->
                             <li class=\"nav-item navbar-dropdown dropdown-user dropdown\">
                                 <a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\"
                                     data-bs-toggle=\"dropdown\">
                                     <div class=\"avatar avatar-online\">
-                                        <img src=\"\" alt class=\"w-px-40 h-auto rounded-circle\" />
+                                        <img src=\"";
+            // line 217
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.jpg"), "html", null, true);
+            yield "\" alt class=\"w-px-40 h-auto rounded-circle\" />
                                     </div>
                                 </a>
                                 <ul class=\"dropdown-menu dropdown-menu-end\">
@@ -424,42 +383,45 @@ class __TwigTemplate_351fc8ba687f2d5ffa06af311e0470fb extends Template
                                             <div class=\"d-flex\">
                                                 <div class=\"flex-shrink-0 me-3\">
                                                     <div class=\"avatar avatar-online\">
-                                                        <img src=\"\" alt
+                                                        <img src=\"";
+            // line 226
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.jpg"), "html", null, true);
+            yield "\" alt
                                                             class=\"w-px-40 h-auto rounded-circle\" />
                                                     </div>
                                                 </div>
                                                 <div class=\"flex-grow-1\">
                                                     <span class=\"fw-semibold d-block\">";
-            // line 276
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 276, $this->source); })()), "user", [], "any", false, false, false, 276), "nom", [], "any", false, false, false, 276), "html", null, true);
+            // line 231
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 231, $this->source); })()), "user", [], "any", false, false, false, 231), "nom", [], "any", false, false, false, 231), "html", null, true);
             yield " ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 276, $this->source); })()), "user", [], "any", false, false, false, 276), "prenom", [], "any", false, false, false, 276), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 231, $this->source); })()), "user", [], "any", false, false, false, 231), "prenom", [], "any", false, false, false, 231), "html", null, true);
             yield "</span>
                                                     <small class=\"text-muted\">
                                                         ";
-            // line 278
+            // line 233
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 278, $this->source); })()), "user", [], "any", false, false, false, 278), "roles", [], "any", false, false, false, 278));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 233, $this->source); })()), "user", [], "any", false, false, false, 233), "roles", [], "any", false, false, false, 233));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 279
+                // line 234
                 yield "                                                        ";
                 if (($context["role"] == "ROLE_ADMIN")) {
-                    // line 280
+                    // line 235
                     yield "                                                        Administrateur
                                                         ";
-                } elseif ((                // line 281
+                } elseif ((                // line 236
 $context["role"] == "ROLE_USER")) {
-                    // line 282
+                    // line 237
                     yield "                                                        Utilisateur
                                                         ";
                 }
-                // line 284
+                // line 239
                 yield "                                                        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 285
+            // line 240
             yield "                                                    </small>
                                                 </div>
 
@@ -486,7 +448,7 @@ $context["role"] == "ROLE_USER")) {
                                     </li>
                                     <li>
                                         <a class=\"dropdown-item\" href=\"";
-            // line 310
+            // line 265
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             yield "\">
                                             <i class=\"bx bx-power-off me-2\"></i>
@@ -499,7 +461,7 @@ $context["role"] == "ROLE_USER")) {
                         </ul>
                         ";
         }
-        // line 320
+        // line 275
         yield "                    </div>
                 </nav>
 
@@ -512,9 +474,9 @@ $context["role"] == "ROLE_USER")) {
 
                     <div class=\"container-xxl flex-grow-1 container-p-y\">
                         ";
-        // line 331
+        // line 286
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 334
+        // line 289
         yield "                    </div>
 
                     <!-- Footer -->
@@ -549,43 +511,43 @@ $context["role"] == "ROLE_USER")) {
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src=\"";
-        // line 367
+        // line 322
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/jquery/jquery.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 368
+        // line 323
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/popper/popper.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 369
+        // line 324
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/js/bootstrap.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 370
+        // line 325
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 372
+        // line 327
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/js/menu.js"), "html", null, true);
         yield "\"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
     <script src=\"";
-        // line 376
+        // line 331
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendor/libs/apex-charts/apexcharts.js"), "html", null, true);
         yield "\"></script>
 
     <!-- Main JS -->
     <script src=\"";
-        // line 379
+        // line 334
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
         yield "\"></script>
 
     <!-- Page JS -->
     <script src=\"";
-        // line 382
+        // line 337
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/dashboards-analytics.js"), "html", null, true);
         yield "\"></script>
 
@@ -596,7 +558,7 @@ $context["role"] == "ROLE_USER")) {
 
     <script src=\"//cdn.datatables.net/2.1.0/js/dataTables.min.js\"></script>
     <script src=\"";
-        // line 390
+        // line 345
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/javascript.js"), "html", null, true);
         yield "\"></script>
 
@@ -612,7 +574,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 128
+    // line 80
     public function block_dashboard($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -631,26 +593,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 137
-    public function block_gestion($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "gestion"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "gestion"));
-
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        return; yield '';
-    }
-
-    // line 145
+    // line 89
     public function block_new_facture($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -669,7 +612,26 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 150
+    // line 98
+    public function block_gestion($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "gestion"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "gestion"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 105
     public function block_facture_impaye($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -688,7 +650,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 155
+    // line 110
     public function block_facture_paye($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -707,7 +669,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 160
+    // line 115
     public function block_all_facture($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -726,7 +688,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 167
+    // line 122
     public function block_config($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -745,7 +707,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 174
+    // line 129
     public function block_client($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -764,7 +726,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 179
+    // line 134
     public function block_articles($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -783,7 +745,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 184
+    // line 139
     public function block_employes($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -802,7 +764,7 @@ $context["role"] == "ROLE_USER")) {
         return; yield '';
     }
 
-    // line 331
+    // line 286
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -812,7 +774,7 @@ $context["role"] == "ROLE_USER")) {
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 332
+        // line 287
         yield "
                         ";
         
@@ -845,7 +807,7 @@ $context["role"] == "ROLE_USER")) {
      */
     public function getDebugInfo()
     {
-        return array (  816 => 332,  806 => 331,  787 => 184,  768 => 179,  749 => 174,  730 => 167,  711 => 160,  692 => 155,  673 => 150,  654 => 145,  635 => 137,  616 => 128,  600 => 390,  589 => 382,  583 => 379,  577 => 376,  570 => 372,  565 => 370,  561 => 369,  557 => 368,  553 => 367,  518 => 334,  516 => 331,  503 => 320,  490 => 310,  463 => 285,  457 => 284,  453 => 282,  451 => 281,  448 => 280,  445 => 279,  441 => 278,  434 => 276,  413 => 257,  411 => 256,  392 => 240,  368 => 218,  360 => 213,  352 => 208,  344 => 203,  333 => 194,  331 => 193,  326 => 190,  318 => 185,  314 => 184,  307 => 180,  303 => 179,  296 => 175,  292 => 174,  282 => 167,  273 => 161,  269 => 160,  262 => 156,  258 => 155,  251 => 151,  247 => 150,  240 => 146,  235 => 145,  233 => 144,  223 => 137,  211 => 128,  132 => 52,  125 => 48,  117 => 43,  112 => 41,  106 => 38,  101 => 36,  97 => 35,  91 => 32,  76 => 20,  55 => 1,);
+        return array (  778 => 287,  768 => 286,  749 => 139,  730 => 134,  711 => 129,  692 => 122,  673 => 115,  654 => 110,  635 => 105,  616 => 98,  597 => 89,  578 => 80,  562 => 345,  551 => 337,  545 => 334,  539 => 331,  532 => 327,  527 => 325,  523 => 324,  519 => 323,  515 => 322,  480 => 289,  478 => 286,  465 => 275,  452 => 265,  425 => 240,  419 => 239,  415 => 237,  413 => 236,  410 => 235,  407 => 234,  403 => 233,  396 => 231,  388 => 226,  376 => 217,  369 => 212,  367 => 211,  348 => 195,  324 => 173,  316 => 168,  308 => 163,  300 => 158,  289 => 149,  287 => 148,  282 => 145,  274 => 140,  270 => 139,  263 => 135,  259 => 134,  252 => 130,  248 => 129,  238 => 122,  229 => 116,  225 => 115,  218 => 111,  214 => 110,  207 => 106,  203 => 105,  193 => 98,  182 => 90,  178 => 89,  175 => 88,  173 => 87,  163 => 80,  132 => 52,  125 => 48,  117 => 43,  112 => 41,  106 => 38,  101 => 36,  97 => 35,  91 => 32,  76 => 20,  55 => 1,);
     }
 
     public function getSourceContext()
@@ -916,56 +878,8 @@ $context["role"] == "ROLE_USER")) {
             <aside id=\"layout-menu\" class=\"layout-menu menu-vertical menu bg-menu-theme\">
                 <div class=\"app-brand demo\">
                     <a href=\"/\" class=\"app-brand-link\">
-                        <span class=\"app-brand-logo demo\">
-                            <svg
-                                width=\"25\"
-                                viewBox=\"0 0 25 42\"
-                                version=\"1.1\"
-                                xmlns=\"http://www.w3.org/2000/svg\"
-                                xmlns:xlink=\"http://www.w3.org/1999/xlink\">
-                                <defs>
-                                    <path
-                                        d=\"M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z\"
-                                        id=\"path-1\"></path>
-                                    <path
-                                        d=\"M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z\"
-                                        id=\"path-3\"></path>
-                                    <path
-                                        d=\"M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z\"
-                                        id=\"path-4\"></path>
-                                    <path
-                                        d=\"M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z\"
-                                        id=\"path-5\"></path>
-                                </defs>
-                                <g id=\"g-app-brand\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">
-                                    <g id=\"Brand-Logo\" transform=\"translate(-27.000000, -15.000000)\">
-                                        <g id=\"Icon\" transform=\"translate(27.000000, 15.000000)\">
-                                            <g id=\"Mask\" transform=\"translate(0.000000, 8.000000)\">
-                                                <mask id=\"mask-2\" fill=\"white\">
-                                                    <use xlink:href=\"#path-1\"></use>
-                                                </mask>
-                                                <use fill=\"#696cff\" xlink:href=\"#path-1\"></use>
-                                                <g id=\"Path-3\" mask=\"url(#mask-2)\">
-                                                    <use fill=\"#696cff\" xlink:href=\"#path-3\"></use>
-                                                    <use fill-opacity=\"0.2\" fill=\"#FFFFFF\" xlink:href=\"#path-3\"></use>
-                                                </g>
-                                                <g id=\"Path-4\" mask=\"url(#mask-2)\">
-                                                    <use fill=\"#696cff\" xlink:href=\"#path-4\"></use>
-                                                    <use fill-opacity=\"0.2\" fill=\"#FFFFFF\" xlink:href=\"#path-4\"></use>
-                                                </g>
-                                            </g>
-                                            <g
-                                                id=\"Triangle\"
-                                                transform=\"translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) \">
-                                                <use fill=\"#696cff\" xlink:href=\"#path-5\"></use>
-                                                <use fill-opacity=\"0.2\" fill=\"#FFFFFF\" xlink:href=\"#path-5\"></use>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </span>
-                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">press</span>
+
+                        <span class=\"app-brand-text demo menu-text fw-bolder ms-2\">ROYAL-PRESSING</span>
                     </a>
 
                     <a href=\"javascript:void(0);\" class=\"layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none\">
@@ -984,6 +898,15 @@ $context["role"] == "ROLE_USER")) {
                         </a>
                     </li>
 
+                    {% if is_granted('ROLE_USER') %}
+
+                    <li class=\"menu-item {% block new_facture %}{% endblock %}\">
+                        <a href=\"{{ path('app_commande_new') }}\" class=\"menu-link\">
+                            <i class=\"menu-icon tf-icons bx bx-home-circle\"></i>
+                            <div data-i18n=\"Analytics\">Nouvelle facture</div>
+                        </a>
+                    </li>
+
                     <!-- Layouts -->
 
                     <li class=\"menu-item {% block gestion %}{% endblock %}\">
@@ -993,12 +916,6 @@ $context["role"] == "ROLE_USER")) {
                         </a>
 
                         <ul class=\"menu-sub\">
-                            {% if is_granted('ROLE_USER') %}
-                            <li class=\"menu-item {% block new_facture %}{% endblock %}\">
-                                <a href=\"{{ path('app_commande_new') }}\" class=\"menu-link\">
-                                    <div data-i18n=\"Without menu\">Nouvel facture</div>
-                                </a>
-                            </li>
                             <li class=\"menu-item {% block facture_impaye %}{% endblock %}\">
                                 <a href=\"{{ path('commande_impaye') }}\" class=\"menu-link\">
                                     <div data-i18n=\"Container\">Factures non payées</div>
@@ -1111,7 +1028,7 @@ $context["role"] == "ROLE_USER")) {
                                 <a class=\"nav-link dropdown-toggle hide-arrow\" href=\"javascript:void(0);\"
                                     data-bs-toggle=\"dropdown\">
                                     <div class=\"avatar avatar-online\">
-                                        <img src=\"\" alt class=\"w-px-40 h-auto rounded-circle\" />
+                                        <img src=\"{{ asset('assets/img/logo.jpg') }}\" alt class=\"w-px-40 h-auto rounded-circle\" />
                                     </div>
                                 </a>
                                 <ul class=\"dropdown-menu dropdown-menu-end\">
@@ -1120,7 +1037,7 @@ $context["role"] == "ROLE_USER")) {
                                             <div class=\"d-flex\">
                                                 <div class=\"flex-shrink-0 me-3\">
                                                     <div class=\"avatar avatar-online\">
-                                                        <img src=\"\" alt
+                                                        <img src=\"{{ asset('assets/img/logo.jpg') }}\" alt
                                                             class=\"w-px-40 h-auto rounded-circle\" />
                                                     </div>
                                                 </div>
