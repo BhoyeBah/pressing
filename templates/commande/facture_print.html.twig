@@ -3,11 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <title>Facture - ROYAL Pressing</title>
-=======
-    <title>Facture - Nourou Pressing</title>
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -38,14 +34,6 @@
             margin-bottom: 10px;
         }
 
-<<<<<<< HEAD
-=======
-        .logo {
-            width: 60px;
-            margin-bottom: 5px;
-        }
-
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
         .company-info {
             border: 1px solid #222;
             padding: 6px;
@@ -70,10 +58,6 @@
             margin-bottom: 6px;
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
         .client-info {
             text-align: left;
             font-size: 8pt;
@@ -93,10 +77,6 @@
             text-align: center;
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
         table {
             width: 100%;
             border-collapse: collapse;
@@ -104,12 +84,7 @@
             margin-top: 8px;
         }
 
-<<<<<<< HEAD
         th, td {
-=======
-        th,
-        td {
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
             padding: 3px;
             border-bottom: 1px solid #eee;
         }
@@ -168,20 +143,12 @@
 
     <div class="invoice">
         <div class="header">
-<<<<<<< HEAD
-=======
-            <!-- <img class="logo" src="" alt="Logo"> -->
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
             <div class="company-info">
                 <div class="company-name">ROYAL PRESSING</div>
                 <div class="company-name">NETTOYAGE À SEC</div>
                 <div class="company-name">LIVRAISON À DOMICILE</div>
                 <div class="company-name">TIVAOANE PEULH/ROND-POINT AAD</div>
-<<<<<<< HEAD
                 <div class="company-name">Tel : 77 121 75 06 - 77 834 42 00</div>
-=======
-                <div class="company-name">Tél : 77 121 75 06 - 77 834 42 00</div>
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
             </div>
         </div>
 
@@ -203,28 +170,16 @@
             <thead>
                 <tr>
                     <th>Article</th>
-<<<<<<< HEAD
                     <th>Qté × Prix</th>
-=======
-                    <th>Qte</th>
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
                     <th class="text-right">Total</th>
                 </tr>
             </thead>
             <tbody>
-<<<<<<< HEAD
                 {% for detail in commande.commandeDetails %}
                 <tr>
                     <td>{{ detail.articles.designation|upper }}</td>
                     <td>{{ detail.quantity }} × {{ detail.prixUnitaire|number_format(0, ',', ' ') }}</td>
                     <td class="text-right">{{ (detail.quantity * detail.prixUnitaire)|number_format(0, ',', ' ') }} FCFA</td>
-=======
-                {% for commande in commande.commandeDetails %}
-                <tr>
-                    <td>{{ commande.articles.designation }}</td>
-                    <td>{{ commande.quantity }}</td>
-                    <td class="text-right">{{ commande.prixUnitaire|number_format(2, ',', ' ') }} FCFA</td>
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
                 </tr>
                 {% else %}
                 <tr>
@@ -235,31 +190,18 @@
         </table>
 
         <div class="summary">
-<<<<<<< HEAD
             <div class="summary-row"><span>Total:</span><span>{{ commande.montantTotal|number_format(0, ',', ' ') }} FCFA</span></div>
             <div class="summary-row"><span>Remise:</span><span>{{ commande.remise|number_format(0, ',', ' ') }} FCFA</span></div>
-=======
-            <div class="summary-row"><span>Total:</span><span>{{ commande.montantTotal|number_format(2, ',', ' ') }} FCFA</span></div>
-            <div class="summary-row"><span>Remise:</span><span>{{ commande.remise|number_format(2, ',', ' ') }} FCFA</span></div>
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
             <div class="summary-row">
                 {% set montantRecu = 0 %}
                 {% for paiement in commande.paiements %}
                 {% set montantRecu = montantRecu + paiement.montantRecu %}
                 {% endfor %}
-<<<<<<< HEAD
                 <span>Montant Reçu:</span><span>{{ montantRecu|number_format(0, ',', ' ') }} FCFA</span>
             </div>
             <div class="summary-row total">
                 <span>Net à payer:</span>
                 <span>{{ (commande.montantTotal - commande.remise - montantRecu)|number_format(0, ',', ' ') }} FCFA</span>
-=======
-                <span>Montant Reçu:</span><span>{{ montantRecu|number_format(2, ',', ' ') }} FCFA</span>
-            </div>
-            <div class="summary-row total">
-                <span>Net à payer:</span>
-                <span>{{ (commande.montantTotal - commande.remise - montantRecu)|number_format(2, ',', ' ') }} FCFA</span>
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
             </div>
             <div class="summary-row" style="justify-content: center;">
                 {% if commande.status == 'payé' %}
@@ -273,18 +215,11 @@
         <div class="divider"></div>
 
         <div class="footer">
-<<<<<<< HEAD
             Merci pour la confiance accordée et renouvelée !<br>
-=======
-            Merci pour votre confiance !
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
+            Passé un délai de 2 mois, la maison décline toute responsabilité en cas de perte.
         </div>
     </div>
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> ea94a14140af5ff69b5fe522eb7fa6c0782f52c3
