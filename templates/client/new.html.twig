@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Client{% endblock %}
+{% block config %}active{% endblock %}
+{% block client %}active{% endblock %}
+
+{% block body %}
+
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> d'ajout d'un client
+        <a href="{{ path('app_client_index') }}" class="btn btn-info"><i class="bx bx-list"></i>Liste des clients</a>
+    </h4>
+
+    {% include 'partials/_flash.html.twig' %}
+    {{ include('client/_form.html.twig') }}
+{% endblock %}

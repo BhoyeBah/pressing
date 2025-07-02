@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}client{% endblock %}
+
+{% block body %}
+    <center>
+        <div class="col-lg-6">
+            <small class="text-light fw-semibold">Informations</small>
+            <div class="demo-inline-spacing mt-3">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Image: </strong> <img src="" alt="">
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Nom: </strong> {{ client.nom }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-id-card me-2"></i> Prénom: </strong> {{ client.prenom }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-location-plus me-2"></i> Adresse:
+                        </strong> {{ client.adresse }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"><i class="bx bx-phone-call me-2"></i> Téléphone:
+                        </strong> {{ client.telephone }}
+                    </li>
+
+                    <li class="list-group-item d-flex align-items-center">
+
+                        <strong class="mx-3"> <i class="bx bx-calendar me-2"></i> Date de création: </strong>
+                        {{ client.createdAt ? client.createdAt|date('Y-m-d H:i:s') : '' }}
+                    </li>
+                    <li class="list-group-item d-flex align-items-center"><strong class="mx-3"><i class="bx bx-calendar-edit me-2"></i> Date de modification:</strong>
+                        {{ client.updatedAt ? client.updatedAt|date('Y-m-d H:i:s') : '' }}
+
+                </ul>
+            </div>
+        </div>
+
+    </center>
+{% endblock %}

@@ -1,0 +1,103 @@
+
+<div class="container ">
+
+
+    <div class="card">
+        <div class="card-header text-center">
+            <h4>Commandes</h4>
+        </div>
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Client</span>
+                        <input type="text" class="form-control" placeholder="Customer"  >
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Adresse client</span>
+                        <input type="text" class="form-control" placeholder="Address"  >
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Ville client</span>
+                        <input type="text" class="form-control" placeholder="City"  >
+                    </div>
+                </div>
+                <div class="col-4">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Inv. No</span>
+                        <input type="text" class="form-control" placeholder="Inv. No"  >
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Inv. Date</span>
+                        <input type="date" class="form-control" placeholder="Inv. Date"  >
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+            <table class="table table-bordered">
+                <thead class="table-success">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Particular</th>
+                    <th scope="col" class="text-end">Qty</th>
+                    <th scope="col" class="text-end">Rate</th>
+                    <th scope="col" class="text-end">Amount</th>
+                    <th scope="col" class="NoPrint">
+                        <button type="button" class="btn btn-sm btn-success" onclick="BtnAdd()">+</button>
+
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody id="TBody">
+                <tr id="TRow" class="d-none">
+                    <th scope="row">1</th>
+                    <td><input type="text" class="form-control" ></td>
+                    <td><input type="number" class="form-control text-end" name="qty" onchange="Calc(this);"></td>
+                    <td><input type="number" class="form-control text-end" name="rate"  onchange="Calc(this);"></td>
+                    <td><input type="number" class="form-control text-end" name="amt" value="0" disabled=""></td>
+                    <td class="NoPrint"><button type="button" class="btn btn-sm btn-danger" onclick="BtnDel(this)">X</button></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <div class="row">
+                <div class="col-8">
+
+                    <button type="button" class="btn btn-primary" onclick="GetPrint()">Print</button>
+
+                </div>
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Total</span>
+                        <input type="number" class="form-control text-end" id="FTotal" name="FTotal" disabled="">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >GST</span>
+                        <input type="number" class="form-control text-end" id="FGST" name="FGST" onchange="GetTotal()">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Net Amt</span>
+                        <input type="number" class="form-control text-end" id="FNet" name="FNet" disabled="">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

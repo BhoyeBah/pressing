@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pressing{% endblock %}
+
+{% block body %}
+    <h1>Create new Pressing</h1>
+
+    {{ include('pressing/_form.html.twig') }}
+
+    <a href="{{ path('app_pressing_index') }}">back to list</a>
+{% endblock %}

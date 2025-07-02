@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Pressing{% endblock %}
+
+{% block body %}
+    <h1>Edit Pressing</h1>
+
+    {{ include('pressing/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_pressing_index') }}">back to list</a>
+
+    {{ include('pressing/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de la commande{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <h5 class="card-header">
+            Numéro de la Commande {{ commande.numero }}
+        </h5>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <p><strong>Date de Commande :</strong> {{ commande.dateCommande|date('h:i:s d-m-Y') }}</p>
+                    </div>
+                    <div class="input-group mb-3">
+                        <p><strong>Date de Livraison :</strong> {{ commande.dateLivraison|date('h:i:s d-m-Y') }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class=" mb-3">
+                        <p><strong>Nom et Prénom :</strong> {{ commande.client.nom }} {{ commande.client.prenom }}</p>
+                    </div>
+                    <div class=" mb-3">
+                        <p><strong>Téléphone :</strong> {{ commande.client.telephone }}</p>
+                    </div>
+                    <div class=" mb-3">
+                        <p><strong>Adresse :</strong> {{ commande.client.adresse }}</p>
+                    </div>
+                </div>
+            </div>
+
+            {#        <p><strong>Statut de Paiement :</strong>#}
+            {#            {% if commande.statut == 'payé' %}#}
+            {#                <span class="badge bg-success">Payé</span>#}
+            {#            {% else %}#}
+            {#                <span class="badge bg-danger">Non payé</span>#}
+            {#            {% endif %}#}
+            {#        </p>#}
+            <h5 class="fw-bold">Détails des Articles</h5>
+
+            <div class="card-body">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Numero</th>
+                        <th>Article</th>
+                        <th>Quantité</th>
+                        <th>Prix Unitaire</th>
+                        <th>Remise</th>
+                        <th>Montant</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for commande in commande.commandeDetails %}
+                        <tr>
+                            <td>{{ commande.articles.numero }}</td>
+                            <td>{{ commande.articles.designation }}</td>
+                            <td>{{ commande.quantity }}</td>
+                            <td>{{ commande.prixUnitaire|number_format(2, ',', ' ') }} FCFA</td>
+                            <td>{{ commande.remise|number_format(2, ',', ' ') }} FCFA</td>
+                            <td>{{ commande.prixTotal|number_format(2, ',', ' ') }} FCFA</td>
+                        </tr>
+
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">Aucun détail de commande trouvé</td>
+                        </tr>
+
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="text-end fw-bold">
+                            Prix total sans remise :
+                        </td>
+                        <td>
+                            <span id=""
+                                  class="text-nowrap"> {{ commande.montantTotal|number_format(2, ',', ' ') }} FCFA</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-end fw-bold">
+                            Prix total avec remise :
+                        </td>
+                        <td>
+                            <span id=""
+                                  class="text-nowrap"> {{ (commande.montantTotal - commande.remise)|number_format(2, ',',' ') }} FCFA</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-end fw-bold">
+                            Rémise
+                        </td>
+                        <td>
+                            <span id="" class="text-nowrap">{{ commande.remise|number_format(2, ',', ' ') }} FCFA</span>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="5" class="text-end fw-bold">
+                            {% set montantRecu = 0 %}
+                            {% for paiement in commande.paiements %}
+                                {% set montantRecu = montantRecu + paiement.montantRecu %}
+                            {% endfor %}
+                            Montant Payé
+                        </td>
+                        <td>
+                            <span id=""
+                                  class="text-nowrap">{{ montantRecu|number_format(2, ',', ' ') }} FCFA</span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+
+                        <td colspan="5" class="text-end fw-bold">
+                            Status de la commande
+                        </td>
+                        <td>
+
+                            {% if commande.status == 'payé' %}
+                                <span class="badge bg-success">Payé</span>
+                            {% else %}
+                                <span class="badge bg-danger">Non payé</span>
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-end fw-bold">
+                            Reste à payer
+                        </td>
+                        <td>
+                                <span id=""
+                                      class="text-nowrap">{{ (commande.montantTotal - commande.remise - montantRecu)|number_format(2, ',',' ') }} FCFA</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-8"></div>
+                <div class="col-md-4">
+                    <a id="print" href="{{ path("app_commande_index") }}" class="btn rounded-pill btn-warning">
+                        <i class="bx bx-subdirectory-left"></i>
+                        Retour
+                    </a>
+                    <a id="print" onclick="load('print')"
+                       href="{{ path("commande_print_Detail", { 'commande': commande.id }) }}"
+                       class="btn rounded-pill btn-primary">
+                        <i class="bx bx-printer"></i>
+                        Imprimer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

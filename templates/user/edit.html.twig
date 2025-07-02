@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Modules{% endblock %}
+
+{% block body %}
+
+    <h1>Modifier le modules</h1>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> de modification d'un utilisateur <a href="{{ path('app_users_index') }}" class="btn btn-info"><i class="bx bx-list"></i>Liste des utilisateurs</a></h4>
+    {{ include('user/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+
+{% endblock %}
